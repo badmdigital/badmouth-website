@@ -54,11 +54,14 @@ function getStatusTag(status: string): string {
 
 /* ── GHL API ──────────────────────────────────────── */
 
+let lastGhlError = "";
+
 async function ghlFetch(path: string, options: RequestInit = {}) {
   const res = await fetch(`${GHL_BASE}${path}`, { ...options, headers: getGHLHeaders() });
   if (!res.ok) {
     const text = await res.text();
-    console.error(`[GHL] ${options.method || "GET"} ${path} failed:`, res.status, text);
+    lastGhlError = `${res.status}: ${text}`;
+    console.error(`[GHL] ${options.method || "GET"} ${path} failed: ${res.status} ${text}`);
     return null;
   }
   return res.json();
@@ -116,7 +119,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({
         success: false,
         error: "Failed to create/update GHL contact",
-        debug: { hasApiKey: !!process.env.GHL_API_KEY, hasLocationId: !!process.env.GHL_LOCATION_ID, upsertData },
+        debug: { hasApiKey: !!process.env.GHL_API_KEY, hasLocationId: !!process.env.GHL_LOCATION_ID, ghlError: lastGhlError },
       }, { status: 500 });
     }
     console.log("[GHL] Contact upserted:", contactId);
