@@ -119,7 +119,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({
         success: false,
         error: "Failed to create/update GHL contact",
-        debug: { hasApiKey: !!process.env.GHL_API_KEY, hasLocationId: !!process.env.GHL_LOCATION_ID, ghlError: lastGhlError },
+        debug: {
+          apiKeyPrefix: process.env.GHL_API_KEY?.substring(0, 10),
+          apiKeyLength: process.env.GHL_API_KEY?.length,
+          locationId: process.env.GHL_LOCATION_ID,
+          ghlError: lastGhlError,
+        },
       }, { status: 500 });
     }
     console.log("[GHL] Contact upserted:", contactId);
