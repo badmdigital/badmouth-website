@@ -153,7 +153,7 @@ function Step1({ data, update }: StepProps) {
       </p>
       <Input label="Brand / Business Name" hint="What's the business called?" value={data.brandName} onChange={(v) => update({ brandName: v })} required />
       <Input label="Your Name" value={data.contactName} onChange={(v) => update({ contactName: v })} required />
-      <Input label="Your Role" hint="Owner, partner, marketing lead — whatever fits" value={data.contactRole} onChange={(v) => update({ contactRole: v })} />
+      <Input label="Your Role" hint="Owner, partner, marketing lead. Whatever fits." value={data.contactRole} onChange={(v) => update({ contactRole: v })} />
       <Input label="Email" hint="Where we send the final version" type="email" value={data.contactEmail} onChange={(v) => update({ contactEmail: v })} required />
       <Input label="Staging Site URL" hint="The link to the site you're reviewing" type="url" value={data.stagingUrl} onChange={(v) => update({ stagingUrl: v })} />
     </div>
@@ -179,10 +179,10 @@ function Step3({ data, update }: StepProps) {
   return (
     <div>
       <p className="text-bad-white/70 text-sm mb-8 leading-relaxed step-intro" style={{ fontFamily: "var(--font-mono)" }}>
-        We need to talk like you know your business — because you do.<span className="blink-cursor" />
+        We need to talk like you know your business. Because you do.<span className="blink-cursor" />
       </p>
-      <Textarea label="Services / Products" hint="List what you offer. Be specific — 'HVAC repair' not just 'services'" value={data.services} onChange={(v) => update({ services: v })} rows={4} />
-      <Textarea label="Pricing Overview" hint="Starting prices, ranges, packages — whatever you're comfortable sharing. We won't publish anything you don't approve." value={data.pricing} onChange={(v) => update({ pricing: v })} rows={3} />
+      <Textarea label="Services / Products" hint="List what you offer. Be specific. 'HVAC repair' instead of 'services.'" value={data.services} onChange={(v) => update({ services: v })} rows={4} />
+      <Textarea label="Pricing Overview" hint="Starting prices, ranges, packages. Whatever you're comfortable sharing. We won't publish anything you don't approve." value={data.pricing} onChange={(v) => update({ pricing: v })} rows={3} />
       <Textarea label="Service Area" hint="Where do you serve? Cities, radius, nationwide?" value={data.serviceArea} onChange={(v) => update({ serviceArea: v })} />
     </div>
   );
@@ -194,7 +194,7 @@ function Step4({ data, update }: StepProps) {
       <p className="text-bad-white/70 text-sm mb-8 leading-relaxed step-intro" style={{ fontFamily: "var(--font-mono)" }}>
         The better we understand your buyer, the harder the copy lands.<span className="blink-cursor" />
       </p>
-      <Textarea label="Who's your ideal client?" hint="Describe them. Age, income, industry, pain points — the more specific, the better." value={data.idealClient} onChange={(v) => update({ idealClient: v })} rows={4} />
+      <Textarea label="Who's your ideal client?" hint="Describe them. Age, income, industry, pain points. The more specific, the better." value={data.idealClient} onChange={(v) => update({ idealClient: v })} rows={4} />
       <Textarea label="What problem do you solve for them?" hint="Not what you sell. What changes for them after they hire you?" value={data.problemSolved} onChange={(v) => update({ problemSolved: v })} rows={3} />
       <Textarea label="Why do they pick you over the competition?" hint="Be honest. What actually makes you different?" value={data.differentiator} onChange={(v) => update({ differentiator: v })} rows={3} />
     </div>
@@ -326,7 +326,7 @@ function Step6({ data, update }: StepProps) {
 
           <Textarea
             label="Anything factually wrong?"
-            hint="Wrong name, wrong service, wrong number — flag it here"
+            hint="Wrong name, wrong service, wrong number. Flag it here."
             value={data.sections[section].factualIssues}
             onChange={(v) => updateSection(section, { factualIssues: v })}
             rows={2}
