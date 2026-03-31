@@ -49,14 +49,14 @@ export default function ComingSoon() {
           width={200}
           height={60}
           priority
-          className="w-[160px] sm:w-[200px]"
+          className="w-[120px] sm:w-[200px]"
         />
       </div>
 
       <main className="relative z-10 flex flex-1 flex-col items-center justify-center text-center max-w-3xl mx-auto">
         {/* Headline */}
         <h1
-          className="glitch-text font-heading text-5xl sm:text-7xl md:text-8xl uppercase tracking-tighter leading-none mb-10 text-bad-white"
+          className="glitch-text font-heading text-6xl sm:text-7xl md:text-8xl uppercase tracking-tighter leading-none mt-6 sm:mt-0 mb-10 text-bad-white"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           SOMETHING
