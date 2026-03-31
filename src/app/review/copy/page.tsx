@@ -431,6 +431,7 @@ function CopyReviewForm() {
   const [step, setStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [animKey, setAnimKey] = useState(0);
 
   const sectionParam = searchParams.get("sections");
@@ -492,6 +493,7 @@ function CopyReviewForm() {
 
   const handleSubmit = async () => {
     setSubmitting(true);
+    setSubmitError(false);
     try {
       const res = await fetch("/api/review/submit", {
         method: "POST",
@@ -500,9 +502,11 @@ function CopyReviewForm() {
       });
       if (res.ok) {
         setSubmitted(true);
+      } else {
+        setSubmitError(true);
       }
     } catch {
-      setSubmitted(true);
+      setSubmitError(true);
     } finally {
       setSubmitting(false);
     }
@@ -619,6 +623,18 @@ function CopyReviewForm() {
 
           {stepComponents[step]}
         </div>
+
+        {/* Error message */}
+        {submitError && (
+          <div className="mt-8 border-2 border-bad-red/40 bg-bad-red/5 px-6 py-4">
+            <p className="text-bad-red text-sm font-bold uppercase tracking-wider" style={{ fontFamily: "var(--font-heading)" }}>
+              Something went wrong.
+            </p>
+            <p className="text-bad-white/50 text-xs mt-1.5" style={{ fontFamily: "var(--font-mono)" }}>
+              Your answers are still here. Hit submit again or go back to review.
+            </p>
+          </div>
+        )}
 
         {/* Navigation */}
         <div className="flex items-center justify-between mt-12 pt-6 border-t border-bad-gray/15">
