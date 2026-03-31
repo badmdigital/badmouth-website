@@ -1,14 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const GHL_BASE = "https://services.leadconnectorhq.com";
-const GHL_API_KEY = process.env.GHL_API_KEY!;
-const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID!;
 
-const GHL_HEADERS = {
-  Authorization: `Bearer ${GHL_API_KEY}`,
-  Version: "2021-07-28",
-  "Content-Type": "application/json",
-};
+function getGHLHeaders() {
+  const apiKey = process.env.GHL_API_KEY;
+  if (!apiKey) throw new Error("GHL_API_KEY not set");
+  return {
+    Authorization: `Bearer ${apiKey}`,
+    Version: "2021-07-28",
+    "Content-Type": "application/json",
+  };
+}
+
+function getLocationId() {
+  const id = process.env.GHL_LOCATION_ID;
+  if (!id) throw new Error("GHL_LOCATION_ID not set");
+  return id;
+}
 
 /* ── Helpers ──────────────────────────────────────── */
 
@@ -47,7 +55,7 @@ function getStatusTag(status: string): string {
 /* ── GHL API ──────────────────────────────────────── */
 
 async function ghlFetch(path: string, options: RequestInit = {}) {
-  const res = await fetch(`${GHL_BASE}${path}`, { ...options, headers: GHL_HEADERS });
+  const res = await fetch(`${GHL_BASE}${path}`, { ...options, headers: getGHLHeaders() });
   if (!res.ok) {
     const text = await res.text();
     console.error(`[GHL] ${options.method || "GET"} ${path} failed:`, res.status, text);
@@ -70,7 +78,7 @@ export async function POST(req: NextRequest) {
     const upsertData = await ghlFetch("/contacts/upsert", {
       method: "POST",
       body: JSON.stringify({
-        locationId: GHL_LOCATION_ID,
+        locationId: getLocationId(),
         firstName,
         lastName,
         email: body.contactEmail || "",
@@ -141,7 +149,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true, contactId });
   } catch (err) {
-    console.error("[Review Submit Error]", err);
-    return NextResponse.json({ success: false, error: "Internal server error" }, { status: 500 });
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("[Review Submit Error]", message);
+    return NextResponse.json({ success: false, error: message }, { status: 500 });
   }
 }
