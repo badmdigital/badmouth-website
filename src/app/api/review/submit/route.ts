@@ -112,7 +112,12 @@ export async function POST(req: NextRequest) {
 
     const contactId = upsertData?.contact?.id;
     if (!contactId) {
-      return NextResponse.json({ success: false, error: "Failed to create/update GHL contact" }, { status: 500 });
+      console.error("[GHL] Upsert response:", JSON.stringify(upsertData));
+      return NextResponse.json({
+        success: false,
+        error: "Failed to create/update GHL contact",
+        debug: { hasApiKey: !!process.env.GHL_API_KEY, hasLocationId: !!process.env.GHL_LOCATION_ID, upsertData },
+      }, { status: 500 });
     }
     console.log("[GHL] Contact upserted:", contactId);
 
