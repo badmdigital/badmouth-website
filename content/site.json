@@ -1,0 +1,44 @@
+{
+  "brand": {
+    "name": "Badmouth Digital",
+    "tagline": "Marketing that follows human logic.",
+    "logoPath": "/images/badmouth-logo.webp",
+    "logoAlt": "Badmouth Digital"
+  },
+  "seo": {
+    "siteTitle": "Badmouth Digital",
+    "siteDescription": "We build marketing systems that follow human logic. Not campaigns. Not hacks. Systems."
+  },
+  "navigation": {
+    "header": [
+      {
+        "label": "Foundation",
+        "href": "/foundation"
+      },
+      {
+        "label": "Visibility",
+        "href": "/visibility"
+      },
+      {
+        "label": "Volume",
+        "href": "/volume"
+      },
+      {
+        "label": "Resources",
+        "href": "/resources"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ]
+  },
+  "settings": {
+    "theme": "badmouth",
+    "leadCaptureMode": "email_optin"
+  }
+}

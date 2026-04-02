@@ -1,0 +1,17 @@
+{
+  "route": "/contact",
+  "status": "planned",
+  "seo": {
+    "title": "Contact | Badmouth Digital",
+    "description": "Get in touch with Badmouth Digital to talk through your business, your bottlenecks, and the right next move."
+  },
+  "hero": {
+    "eyebrow": "Contact",
+    "headline": "Let's Talk",
+    "subheadline": "Tell us what you are building, what is stuck, and what kind of growth system you need next."
+  },
+  "cta": {
+    "label": "Book a Conversation",
+    "href": "mailto:hello@badmouthdigital.com"
+  }
+}

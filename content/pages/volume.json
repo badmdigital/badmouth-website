@@ -1,0 +1,17 @@
+{
+  "route": "/volume",
+  "status": "planned",
+  "seo": {
+    "title": "Volume | Badmouth Digital",
+    "description": "Volume is the paid growth layer for businesses that need stronger traffic, more leads, and campaign momentum."
+  },
+  "hero": {
+    "eyebrow": "Service",
+    "headline": "Volume",
+    "subheadline": "Paid media systems built for businesses that want more qualified traffic and a steadier lead flow."
+  },
+  "cta": {
+    "label": "Scale with Volume",
+    "href": "/contact"
+  }
+}

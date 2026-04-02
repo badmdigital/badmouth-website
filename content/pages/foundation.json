@@ -1,0 +1,17 @@
+{
+  "route": "/foundation",
+  "status": "planned",
+  "seo": {
+    "title": "Foundation | Badmouth Digital",
+    "description": "Foundation is the base system for businesses that need a site, positioning, and a clear launch path."
+  },
+  "hero": {
+    "eyebrow": "Offer",
+    "headline": "Foundation",
+    "subheadline": "The base system for businesses that need a sharp online presence, a clear message, and a site built to convert."
+  },
+  "cta": {
+    "label": "Start with Foundation",
+    "href": "/contact"
+  }
+}

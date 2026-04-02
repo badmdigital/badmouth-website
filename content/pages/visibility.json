@@ -1,0 +1,17 @@
+{
+  "route": "/visibility",
+  "status": "planned",
+  "seo": {
+    "title": "Visibility | Badmouth Digital",
+    "description": "Visibility is the organic growth layer for businesses that need search presence, discoverability, and authority."
+  },
+  "hero": {
+    "eyebrow": "Service",
+    "headline": "Visibility",
+    "subheadline": "Organic growth systems built to help the right people find you, trust you, and keep finding you."
+  },
+  "cta": {
+    "label": "Improve Visibility",
+    "href": "/contact"
+  }
+}

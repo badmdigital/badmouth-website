@@ -1,0 +1,17 @@
+{
+  "route": "/resources",
+  "status": "planned",
+  "seo": {
+    "title": "Resources | Badmouth Digital",
+    "description": "Resources, guides, and practical tools for businesses that want better marketing systems and clearer growth decisions."
+  },
+  "hero": {
+    "eyebrow": "Library",
+    "headline": "Resources",
+    "subheadline": "Practical content built to help businesses make sharper marketing decisions without fluff or guesswork."
+  },
+  "cta": {
+    "label": "Explore Resources",
+    "href": "/resources"
+  }
+}

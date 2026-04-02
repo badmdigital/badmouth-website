@@ -1,0 +1,17 @@
+{
+  "route": "/blog",
+  "status": "planned",
+  "seo": {
+    "title": "Blog | Badmouth Digital",
+    "description": "Articles, ideas, and operating principles from Badmouth Digital on growth, systems, and marketing that follows human logic."
+  },
+  "hero": {
+    "eyebrow": "Insights",
+    "headline": "Blog",
+    "subheadline": "Ideas, breakdowns, and field notes on building marketing systems that make sense to actual people."
+  },
+  "cta": {
+    "label": "Read the Blog",
+    "href": "/blog"
+  }
+}
