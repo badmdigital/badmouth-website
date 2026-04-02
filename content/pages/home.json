@@ -1,28 +1,28 @@
 {
   "seo": {
-    "title": "Badmouth Digital — Coming Soon",
-    "description": "We build marketing systems that follow human logic. Not campaigns. Not hacks. Systems. Coming soon."
+    "title": "Badmouth Digital — Launching Soon",
+    "description": "Crafting elite marketing systems grounded in human logic. Not trends. Not shortcuts. Systems. Launching soon."
   },
   "hero": {
-    "eyebrow": "ARE YOU READY?",
+    "eyebrow": "PREPARE YOURSELF",
     "headlineLines": [
       "SOMETHING",
-      "LOUD",
-      "IS COMING"
+      "EXTRAORDINARY",
+      "APPROACHES"
     ],
     "highlightLineIndex": 0,
-    "subheadline": "We build marketing systems that follow human logic. Not campaigns. Not hacks. Systems.",
-    "supportingText": "The new Badmouth Digital site is being built. Get on the list.",
+    "subheadline": "We create marketing systems that resonate with human logic. Not trends. Not shortcuts. Systems.",
+    "supportingText": "The new Badmouth Digital experience is on its way. Join our exclusive list.",
     "primaryCta": {
-      "label": "NOTIFY ME",
+      "label": "STAY UPDATED",
       "href": "#notify"
     },
     "formPlaceholder": "your@email.com",
     "successHeadline": "You're on the list.",
-    "successBody": "We'll let you know when we go live. No spam. No fluff."
+    "successBody": "We'll notify you upon launch. No spam. Just value."
   },
   "footer": {
-    "tagline": "Marketing that follows human logic.",
+    "tagline": "Marketing that resonates with human logic.",
     "copyright": "© 2026 Badmouth Digital"
   }
 }
