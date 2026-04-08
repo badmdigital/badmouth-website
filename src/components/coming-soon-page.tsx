@@ -75,6 +75,15 @@ export function ComingSoonPage({ home, site }: ComingSoonPageProps) {
       </div>
 
       <main className="relative z-10 mx-auto flex max-w-3xl flex-1 flex-col items-center justify-center text-center">
+        {home.hero.eyebrow ? (
+          <p
+            className="mb-5 text-xs uppercase tracking-[0.45em] text-bad-red sm:text-sm"
+            style={{ fontFamily: "var(--font-mono)" }}
+          >
+            {home.hero.eyebrow}
+          </p>
+        ) : null}
+
         <h1
           className="glitch-text mt-6 mb-10 font-heading text-6xl leading-none tracking-tighter text-bad-white uppercase sm:mt-0 sm:text-7xl md:text-8xl"
           style={{ fontFamily: "var(--font-heading)" }}
