@@ -215,6 +215,29 @@ textarea:focus {
   animation: count-pop 0.3s ease-out;
 }
 
+/* Brand guide demo buttons */
+.demo-btn {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+.demo-btn--has-hover:hover {
+  background: var(--btn-hover-bg);
+  color: var(--btn-hover-text);
+}
+.demo-btn--forced {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: 0 0 24px rgba(255, 0, 0, 0.25);
+  transform: translateY(-1px);
+}
+
 /* Floating red accent dots */
 @keyframes float-dot {
   0%, 100% { transform: translateY(0); opacity: 0.3; }

@@ -19,3 +19,22 @@ Built and shipped client copy review + business intake form at `/review/copy`.
 - API direct over webhooks for reliability and control
 - Query params (`brand`, `url`, `sections`) for per-client pre-filling
 - `ping.badmouthdigital.com` for sending review emails
+
+## 2026-04-16 — GitHub Repo Audit + Doc Migration
+
+Audited all repos under `badmdigital` GitHub account. Identified two stale repos and migrated all useful content.
+
+**Tasks:**
+- Reviewed 25 repos across badmdigital account
+- Clarified purpose of badmouth-claude (AI brain backup), Badmouth-Digital (old Astro site), badmouth-website (current Next.js site), badmouth-os (stale scaffold)
+- Reviewed branding, copy, and funnels folders in Badmouth-Digital
+- Migrated 3 docs into badmouth-website
+
+**Files created:**
+- `content/site-copy-v3.md` — full website copy (all 8 pages, Feb 2026 draft)
+- `docs/visual-asset-guide.md` — design/asset direction with AI prompts per section
+- `context/brand-guidelines.md` — brand identity v2 (voice, colors, typography, photography)
+
+**Key decisions:**
+- Badmouth-Digital and badmouth-os are now safe to archive/delete (manual — MCP has no delete_repository)
+- Two brand images (Artboard 11, Artboard 7) not migrated — likely superseded or already in Supabase
