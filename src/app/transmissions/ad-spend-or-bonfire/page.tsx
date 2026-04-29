@@ -1,0 +1,179 @@
+import type { Metadata } from "next";
+
+import { TransmissionShell } from "@/components/site/TransmissionShell";
+
+export const metadata: Metadata = {
+  title: "Ad Spend or Bonfire? You Decide. | Badmouth Digital",
+  description:
+    "Are you investing or just keeping warm? How to tell if your PPC agency is taking you for a ride.",
+};
+
+export default function Page() {
+  return (
+    <TransmissionShell
+      title="Ad Spend or Bonfire? You Decide."
+      description="Are you investing or just keeping warm? How to tell if your PPC agency is taking you for a ride."
+      category="Wasting Money on Ads"
+      categoryColor="var(--theme-accent-yellow)"
+      date="Feb 10, 2026"
+      readTime="6 min"
+      wordCount="1,580"
+      prevPost={{
+        title: "Your Website Isn't Broken. Your System Is.",
+        slug: "your-website-isnt-broken",
+      }}
+      nextPost={{
+        title: "The Agency Burned You. Now What?",
+        slug: "agency-burned-you",
+      }}
+    >
+      <div className="post-image">
+        <span className="post-image__placeholder">🔥 Article Header Image</span>
+      </div>
+
+      <p>
+        Let me ask you something:{" "}
+        <strong>
+          do you know exactly how many booked jobs came from your ad spend last month?
+        </strong>
+      </p>
+
+      <p>
+        Not clicks. Not impressions. Not &ldquo;website visitors.&rdquo; Booked jobs.
+        Actual revenue. If you can&apos;t answer that question with a specific number,
+        you&apos;re not advertising. You&apos;re gambling.
+      </p>
+
+      <h2 id="the-agency-play">The Agency Play</h2>
+
+      <p>Here&apos;s how most ad agencies work with service businesses:</p>
+
+      <p>
+        They set up some Google Ads. They pick some keywords. They write some ad copy.
+        They send you a monthly report showing you got 847 impressions and 23 clicks and
+        your cost-per-click is $12.47.
+      </p>
+
+      <p>
+        And you stare at it and think, &ldquo;Is that good?&rdquo; And they say,
+        &ldquo;That&apos;s great. Let&apos;s increase the budget.&rdquo;
+      </p>
+
+      <p>
+        But here&apos;s the question they never answer:{" "}
+        <strong>
+          how many of those 23 clicks turned into phone calls? How many of those phone
+          calls turned into booked jobs? What was the actual return on what you spent?
+        </strong>
+      </p>
+
+      <p>
+        They don&apos;t answer because they don&apos;t know. Or worse — they do know,
+        and the answer isn&apos;t pretty.
+      </p>
+
+      <blockquote>
+        <p>
+          &ldquo;If your ad agency can&apos;t tell you your cost per booked job,
+          they&apos;re not managing your ads. They&apos;re managing your
+          expectations.&rdquo;
+        </p>
+      </blockquote>
+
+      <h2 id="the-math">The Math That Matters</h2>
+
+      <p>Advertising for a service business comes down to one formula:</p>
+
+      <div className="callout">
+        <p className="callout-title">💰 The Only Formula That Matters</p>
+        <p>
+          <strong>
+            Money Spent on Ads ÷ Jobs Booked from Ads = Cost Per Acquisition
+          </strong>
+          <br />
+          If you spent $2,000 and booked 4 jobs averaging $3,000 each, you made $12,000
+          from $2,000. That&apos;s a 6x return. That&apos;s advertising.
+          <br />
+          <br />
+          If you spent $2,000 and you &ldquo;think&rdquo; you got some calls but
+          you&apos;re not sure which ones came from ads? That&apos;s a bonfire.
+        </p>
+      </div>
+
+      <h2 id="why-ads-fail">Why Ads Fail (It&apos;s Usually Not the Ads)</h2>
+
+      <p>
+        Here&apos;s the dirty secret: most ad campaigns for service businesses fail not
+        because the ads are bad, but because{" "}
+        <strong>what happens after the click is broken.</strong>
+      </p>
+
+      <ul>
+        <li>The landing page is your homepage (terrible)</li>
+        <li>The phone number isn&apos;t click-to-call on mobile</li>
+        <li>Nobody answers the phone during peak ad hours</li>
+        <li>The form submission doesn&apos;t trigger an instant response</li>
+        <li>There&apos;s no tracking to connect the click to the job</li>
+      </ul>
+
+      <p>
+        You&apos;re paying to get people to your door, then leaving that door locked.
+        The ads worked. Your system didn&apos;t.
+      </p>
+
+      <h2 id="when-to-run-ads">When to Actually Run Ads</h2>
+
+      <p>
+        This is the part agencies don&apos;t want to hear:{" "}
+        <strong>not every business is ready for paid ads.</strong>
+      </p>
+
+      <p>
+        If your website doesn&apos;t convert, ads will just send more people to a site
+        that doesn&apos;t work. If you don&apos;t answer your phone, ads will generate
+        calls you miss. If you can&apos;t track results, you&apos;ll never know if the
+        ads are working.
+      </p>
+
+      <p>Ads are Step 3 in the system. Not Step 1. Here&apos;s the order:</p>
+
+      <ol>
+        <li>
+          <strong>Fix your website and follow-up system.</strong> Make sure when someone
+          contacts you, the experience is seamless.
+        </li>
+        <li>
+          <strong>Build your organic presence.</strong> Google Business Profile,
+          reviews, local SEO. Free traffic first.
+        </li>
+        <li>
+          <strong>Then turn on ads.</strong> Now you&apos;re sending paid traffic to a
+          system that actually converts. Now the math works.
+        </li>
+      </ol>
+
+      <h2 id="red-flags">Red Flags Your Ad Agency Is Burning Your Money</h2>
+
+      <ul>
+        <li>They report on impressions and clicks but never on booked jobs</li>
+        <li>They want to increase your budget every month</li>
+        <li>They can&apos;t explain where your money is going in plain English</li>
+        <li>You don&apos;t have access to your own ad accounts</li>
+        <li>They locked you into a long-term contract</li>
+        <li>Your landing page is just your homepage</li>
+      </ul>
+
+      <p>
+        If three or more of those apply, it might be time for a conversation. Not with
+        them. With someone who&apos;ll tell you the truth.
+      </p>
+
+      <p>
+        <strong>
+          The goal isn&apos;t to spend more on ads. It&apos;s to make every dollar you
+          spend traceable, accountable, and profitable.
+        </strong>
+      </p>
+    </TransmissionShell>
+  );
+}

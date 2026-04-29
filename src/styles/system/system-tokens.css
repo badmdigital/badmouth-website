@@ -1,0 +1,123 @@
+/* ═══════════════════════════════════════════════════════
+   UNIVERSAL DESIGN SYSTEM — System Tokens
+
+   These are structural tokens that NEVER change between
+   projects. They include spacing, z-index, timing, and
+   SEMANTIC ALIASES that point to the theme layer.
+
+   Components reference these values. The theme file
+   provides the actual brand values via --theme-* vars.
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    /* ══════════════════════════════════════════════════
+       STRUCTURAL TOKENS (universal)
+       ══════════════════════════════════════════════════ */
+
+    /* ── Spacing Scale ─────────────────────────────── */
+    --space-1: 0.25rem;
+    /*  4px */
+    --space-2: 0.5rem;
+    /*  8px */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-5: 1.25rem;
+    /* 20px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+    --space-10: 2.5rem;
+    /* 40px */
+    --space-12: 3rem;
+    /* 48px */
+    --space-16: 4rem;
+    /* 64px */
+    --space-20: 5rem;
+    /* 80px */
+    --space-24: 6rem;
+    /* 96px */
+    --space-32: 8rem;
+    /* 128px */
+    --space-40: 10rem;
+    /* 160px */
+
+    /* ── Transitions ───────────────────────────────── */
+    --duration-instant: 100ms;
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+    /* ── Z-Index Scale ─────────────────────────────── */
+    --z-base: 0;
+    --z-above: 10;
+    --z-nav: 100;
+    --z-overlay: 200;
+    --z-modal: 300;
+    --z-toast: 400;
+
+    /* ══════════════════════════════════════════════════
+       SEMANTIC ALIASES (point to --theme-* values)
+       Components use THESE, never --theme-* directly.
+       ══════════════════════════════════════════════════ */
+
+    /* ── Colors ────────────────────────────────────── */
+    --color-brand: var(--theme-brand);
+    --color-brand-dark: var(--theme-brand-dark);
+    --color-brand-glow: var(--theme-brand-glow);
+
+    --color-surface-base: var(--theme-surface-base);
+    --color-surface-elevated: var(--theme-surface-elevated);
+    --color-surface-sunken: var(--theme-surface-sunken);
+    --color-surface-pure: var(--theme-surface-pure);
+    --color-surface-inverse: var(--theme-surface-inverse);
+
+    --color-text-primary: var(--theme-text-primary);
+    --color-text-secondary: var(--theme-text-secondary);
+    --color-text-muted: var(--theme-text-muted);
+    --color-text-inverse: var(--theme-text-inverse);
+
+    --color-border: var(--theme-border);
+    --color-border-subtle: var(--theme-border-subtle);
+    --color-border-strong: var(--theme-border-strong);
+
+    /* ── Typography ────────────────────────────────── */
+    --font-display: var(--theme-font-display);
+    --font-body: var(--theme-font-body);
+    --font-mono: var(--theme-font-mono);
+
+    /* ── Shadows ───────────────────────────────────── */
+    --shadow-card: var(--theme-shadow-card);
+    --shadow-brand: var(--theme-shadow-brand);
+    --shadow-nav: var(--theme-shadow-nav);
+
+    /* ── Radius ────────────────────────────────────── */
+    --radius-default: var(--theme-radius);
+    --radius-sm: var(--theme-radius-sm);
+    --radius-md: var(--theme-radius-md);
+    --radius-lg: var(--theme-radius-lg);
+    --radius-full: var(--theme-radius-full);
+
+    /* ── Nav ───────────────────────────────────────── */
+    --nav-bg: var(--theme-nav-bg);
+    --nav-blur: var(--theme-nav-blur);
+    --nav-border: var(--theme-nav-border);
+
+    /* ── Effects ───────────────────────────────────── */
+    --noise-opacity: var(--theme-noise-opacity);
+    --scanline-opacity: var(--theme-scanline-opacity);
+
+    /* ── Selection ─────────────────────────────────── */
+    --selection-bg: var(--theme-selection-bg);
+    --selection-text: var(--theme-selection-text);
+
+    /* ── Scrollbar ─────────────────────────────────── */
+    --scrollbar-track: var(--theme-scrollbar-track);
+    --scrollbar-thumb: var(--theme-scrollbar-thumb);
+    --scrollbar-hover: var(--theme-scrollbar-hover);
+}
