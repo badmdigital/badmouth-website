@@ -1,0 +1,76 @@
+/* Ported from _archive/astro-feb-2026/src/pages/index.astro */
+
+.sys-path {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--theme-accent-teal);
+    opacity: 0.8;
+}
+
+.hero-qualifier {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    margin-top: var(--space-1);
+    max-width: 50ch;
+}
+
+.hero-ticker-wrap {
+    position: absolute;
+    bottom: 56px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    z-index: 3;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.hero-ticker {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-ticker__track {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-6);
+    white-space: nowrap;
+    animation: ticker-scroll 60s linear infinite;
+}
+
+.hero-ticker__item {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+.hero-ticker__prefix {
+    color: var(--theme-accent-teal);
+    margin-right: 4px;
+}
+
+.hero-ticker__sep {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--color-brand);
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}

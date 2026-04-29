@@ -1,0 +1,194 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+import { SiteShell } from "@/components/site/SiteShell";
+
+export const metadata: Metadata = {
+  title: "Field Kit | Badmouth Digital",
+  description:
+    "Free tools, checklists, and guides for local service businesses. Fix what's broken before you hire anyone.",
+};
+
+const diagnosticTools = [
+  {
+    title: "Marketing System Checklist",
+    description:
+      "Find out what's connected and what's not. Takes 5 minutes. Tells you exactly where the gaps are.",
+    type: "Free Download",
+    icon: "☐",
+  },
+  {
+    title: "Website Scorecard",
+    description:
+      "Rate your current site across 10 categories: lead capture, speed, mobile, follow-up, tracking, and more.",
+    type: "Free Download",
+    icon: "▣",
+  },
+  {
+    title: "Ad Spend Calculator",
+    description:
+      "Plug in your numbers. Find out if your ads are making money or just making noise.",
+    type: "Free Tool",
+    icon: "◈",
+  },
+];
+
+const guides = [
+  {
+    title: "Google Business Profile Setup",
+    description:
+      "Step-by-step guide to getting your Google profile dialed in. Categories, photos, posts, reviews. The whole thing.",
+    type: "Guide",
+    icon: "📍",
+  },
+  {
+    title: "Is Your Website Actually Working?",
+    description:
+      "A no-BS walkthrough of what your website should be doing behind the scenes. Spoiler: most aren't.",
+    type: "Guide",
+    icon: "⚙",
+  },
+  {
+    title: "How to Hire an Agency (Without Getting Burned)",
+    description:
+      "What to ask. What to avoid. Red flags that should stop you cold. Written by someone who's seen it all.",
+    type: "Guide",
+    icon: "🚩",
+  },
+];
+
+export default function FieldKitPage() {
+  return (
+    <SiteShell currentPage="field-kit">
+      {/* SECTION 1 — HERO */}
+      <section
+        className="section section--hero surface-base noise-bg"
+        style={{
+          minHeight: "auto",
+          paddingTop: "var(--space-24)",
+          paddingBottom: "var(--space-12)",
+        }}
+      >
+        <div className="grid-page">
+          <div className="col-content stack-6 text-center">
+            <p className="t-eyebrow">Free Tools</p>
+            <h1 className="t-display t-display--hero" style={{ marginInline: "auto" }}>
+              THE <span style={{ color: "var(--color-brand)" }}>FIELD KIT.</span><br />
+              FIX WHAT YOU CAN.<br />
+              <span style={{ color: "var(--color-brand)" }}>WE&apos;LL HANDLE THE REST.</span>
+            </h1>
+            <p className="t-body t-body--lg" style={{ marginInline: "auto", maxWidth: "55ch" }}>
+              Not ready to hire? Fine. Here&apos;s some free stuff that&apos;ll actually help. No email required for most of it. No catch.
+            </p>
+            <p className="t-body t-body--md" style={{ marginInline: "auto", maxWidth: "55ch" }}>
+              Use these to figure out what&apos;s broken. If you need help fixing it, you know where to find us.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2 — DIAGNOSTIC TOOLS */}
+      <section className="section section--padded surface-sunken">
+        <div className="grid-page grid-gap-lg">
+          <div className="col-full text-center stack-6">
+            <p className="t-eyebrow">Figure Out What&apos;s Broken</p>
+            <h2 className="t-display t-display--section" style={{ marginInline: "auto" }}>
+              RUN YOUR OWN <span className="t-accent t-flicker">DIAGNOSTIC.</span>
+            </h2>
+          </div>
+          <div className="col-full">
+            <div className="inner-grid-3">
+              {diagnosticTools.map((tool) => (
+                <div key={tool.title} className="card stack-4 kit-card">
+                  <div className="kit-card__header">
+                    <span className="kit-card__icon">{tool.icon}</span>
+                    <span className="kit-card__type">{tool.type}</span>
+                  </div>
+                  <h3 className="t-display t-display--card">{tool.title}</h3>
+                  <p className="t-body t-body--sm">{tool.description}</p>
+                  <Link href="/contact" className="btn btn--primary btn--sm" style={{ marginTop: "auto" }}>
+                    Get It →
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3 — GUIDES */}
+      <section className="section section--padded surface-base">
+        <div className="grid-page grid-gap-lg">
+          <div className="col-full text-center stack-6">
+            <p className="t-eyebrow">Learn the Basics</p>
+            <h2 className="t-display t-display--section" style={{ marginInline: "auto" }}>
+              DO IT <span className="t-accent t-flicker">YOURSELF.</span> (FOR NOW.)
+            </h2>
+          </div>
+          <div className="col-full">
+            <div className="inner-grid-3">
+              {guides.map((guide) => (
+                <div key={guide.title} className="card stack-4 kit-card">
+                  <div className="kit-card__header">
+                    <span className="kit-card__icon">{guide.icon}</span>
+                    <span className="kit-card__type">{guide.type}</span>
+                  </div>
+                  <h3 className="t-display t-display--card">{guide.title}</h3>
+                  <p className="t-body t-body--sm">{guide.description}</p>
+                  <Link href="/contact" className="btn btn--outline btn--sm" style={{ marginTop: "auto" }}>
+                    Download →
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4 — CTA */}
+      <section
+        className="section section--cta section--padded section--mic-drop has-scanlines"
+        style={{ position: "relative" }}
+      >
+        <div className="grid-page" style={{ position: "relative", zIndex: 2 }}>
+          <div className="col-content text-center stack-4">
+            <h2 className="t-display t-display--section" style={{ color: "#fff", marginInline: "auto" }}>
+              USE WHAT YOU CAN.<br />
+              <span className="mic-drop__headline">ASK US ABOUT THE REST.</span>
+            </h2>
+            <p
+              className="t-body t-body--lg"
+              style={{ marginInline: "auto", maxWidth: "50ch", marginTop: "var(--space-4)" }}
+            >
+              These tools will get you started. But if you want someone to build the whole system, that&apos;s what we do.
+            </p>
+            <div className="flex-row-wrap" style={{ gap: "var(--space-4)", justifyContent: "center" }}>
+              <Link href="/services" className="btn btn--lg">See Our Services →</Link>
+              <Link
+                href="/contact"
+                className="btn btn--lg"
+                style={{ background: "transparent", border: "2px solid #fff" }}
+              >
+                Or Just Talk to Us →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REINFORCEMENT */}
+      <section className="section section--statement section--padded-sm surface-pure">
+        <div className="grid-page">
+          <div className="col-content text-center">
+            <p
+              className="t-body t-body--lg"
+              style={{ marginInline: "auto", maxWidth: "55ch", color: "var(--color-text-primary)", fontWeight: 500 }}
+            >
+              Free tools that actually help. No email wall. No bait-and-switch. Just use them.
+            </p>
+          </div>
+        </div>
+      </section>
+    </SiteShell>
+  );
+}

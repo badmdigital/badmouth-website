@@ -1,0 +1,100 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+import { SiteShell } from "@/components/site/SiteShell";
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Badmouth Digital",
+  description: "Badmouth Digital terms of service.",
+};
+
+export default function TermsPage() {
+  return (
+    <SiteShell currentPage="terms">
+      <section className="section section--padded surface-base">
+        <div className="grid-page">
+          <div className="col-content stack-4">
+            <p className="t-eyebrow">Legal</p>
+            <h1 className="t-display t-display--section">Terms of Service</h1>
+            <p className="t-body t-body--sm" style={{ color: "var(--color-text-muted)" }}>
+              Last updated: February 2026
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--padded surface-sunken">
+        <div className="grid-page">
+          <div className="col-content legal-content">
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+              By accessing and using the Badmouth Digital website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or services.
+            </p>
+
+            <h2>2. Services</h2>
+            <p>
+              Badmouth Digital provides website design, development, local SEO, paid advertising management, and related digital marketing services for local service businesses. Specific services, deliverables, and pricing are outlined in individual service agreements.
+            </p>
+
+            <h2>3. Client Responsibilities</h2>
+            <p>As a client, you agree to:</p>
+            <ul>
+              <li>Provide accurate and timely information needed to complete your project.</li>
+              <li>Respond to communications and approve deliverables in a reasonable timeframe.</li>
+              <li>Ensure that any content you provide does not infringe on third-party rights.</li>
+              <li>Make payments according to the agreed-upon schedule.</li>
+            </ul>
+
+            <h2>4. Intellectual Property</h2>
+            <p>
+              Upon full payment, you own the final deliverables created specifically for your project. We retain the right to showcase work in our portfolio unless otherwise agreed in writing. Any proprietary tools, frameworks, or templates used remain the property of Badmouth Digital.
+            </p>
+
+            <h2>5. Payment Terms</h2>
+            <p>
+              Payment terms are specified in individual service agreements. We reserve the right to pause or suspend services for overdue payments. All fees are non-refundable unless otherwise stated in your service agreement.
+            </p>
+
+            <h2>6. Limitation of Liability</h2>
+            <p>
+              Badmouth Digital shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use or inability to use our services. Our total liability shall not exceed the amount paid by you for the services in question.
+            </p>
+
+            <h2>7. Termination</h2>
+            <p>
+              Either party may terminate services with written notice as specified in the service agreement. Upon termination, you are responsible for payment of all work completed up to the termination date.
+            </p>
+
+            <h2>8. Website Use</h2>
+            <p>You agree not to:</p>
+            <ul>
+              <li>Use our website for any unlawful purpose.</li>
+              <li>Attempt to gain unauthorized access to any part of our website or systems.</li>
+              <li>Reproduce, duplicate, or copy any content from our website without permission.</li>
+            </ul>
+
+            <h2>9. Disclaimer</h2>
+            <p>
+              While we strive for excellent results, we cannot guarantee specific outcomes such as search engine rankings, lead volumes, or revenue increases. Results vary based on many factors including market conditions, competition, and client participation.
+            </p>
+
+            <h2>10. Changes to Terms</h2>
+            <p>
+              We reserve the right to update these Terms of Service at any time. Changes take effect upon posting to this page.
+            </p>
+
+            <h2>11. Governing Law</h2>
+            <p>
+              These terms shall be governed by and construed in accordance with applicable state and federal laws.
+            </p>
+
+            <h2>12. Contact</h2>
+            <p>
+              For questions about these Terms of Service, please visit our <Link href="/contact">contact page</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
+    </SiteShell>
+  );
+}
