@@ -1,18 +1,11 @@
-import type { Metadata } from "next";
+import { ComingSoonPage } from "@/components/coming-soon-page";
+import { getHomePageContent, getSiteContent } from "@/lib/site-content";
 
-import { HomeContent } from "@/components/site/HomeContent";
-import { SiteShell } from "@/components/site/SiteShell";
+export default async function HomePage() {
+  const [site, home] = await Promise.all([
+    getSiteContent(),
+    getHomePageContent(),
+  ]);
 
-export const metadata: Metadata = {
-  title: "Lead Systems for Local Service Businesses | Badmouth Digital",
-  description:
-    "Websites & marketing systems for local service businesses. No fluff. No dashboards nobody reads. Just a system that does its job.",
-};
-
-export default function HomePage() {
-  return (
-    <SiteShell currentPage="home">
-      <HomeContent />
-    </SiteShell>
-  );
+  return <ComingSoonPage site={site} home={home} />;
 }
