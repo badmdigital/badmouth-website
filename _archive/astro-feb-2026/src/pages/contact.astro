@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" description="Fill out the form. Tell us what's going on. We'll look at your stuff before we talk." currentPage="contact">
+
+    <!-- SECTION 1 — HERO -->
+    <section class="section section--hero surface-base noise-bg" style="min-height: auto; padding-top: var(--space-24); padding-bottom: var(--space-12);">
+        <div class="grid-page">
+            <div class="col-content stack-6 text-center">
+                <p class="t-eyebrow">Let's Talk</p>
+                <h1 class="t-display t-display--hero" style="margin-inline: auto;">
+                    YOU'VE READ ENOUGH.<br />
+                    <span class="t-accent t-flicker">LET'S SEE WHAT'S BROKEN.</span>
+                </h1>
+                <p class="t-body t-body--lg" style="margin-inline: auto; max-width: 55ch;">
+                    Fill out the form. Tell us what's going on. We'll look at your stuff before we talk so we can skip the small talk and get to what matters.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 — THE FORM -->
+    <section class="section section--padded surface-sunken">
+        <div class="grid-page grid-gap-lg">
+            <div class="col-content">
+                <form class="stack-6" id="contact-form" action="#" method="POST">
+                    <div class="inner-grid-2">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Name *</label>
+                            <input class="form-input" type="text" id="name" name="name" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="business">Business Name *</label>
+                            <input class="form-input" type="text" id="business" name="business" required />
+                        </div>
+                    </div>
+                    <div class="inner-grid-2">
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone *</label>
+                            <input class="form-input" type="tel" id="phone" name="phone" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email *</label>
+                            <input class="form-input" type="email" id="email" name="email" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="website">Website URL <span style="color: var(--color-text-muted);">(if you have one)</span></label>
+                        <input class="form-input" type="url" id="website" name="website" placeholder="https://" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="headache">What's your biggest headache right now? *</label>
+                        <textarea class="form-textarea" id="headache" name="headache" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="tried">What have you tried before?</label>
+                        <textarea class="form-textarea" id="tried" name="tried" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="source">How'd you find us?</label>
+                        <select class="form-select" id="source" name="source">
+                            <option value="">Select one...</option>
+                            <option value="google">Google</option>
+                            <option value="referral">Referral</option>
+                            <option value="social">Social Media</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">Send It →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- SECTION 3 — WHAT HAPPENS AFTER -->
+    <section class="section section--padded surface-base">
+        <div class="grid-page grid-gap-lg">
+            <div class="col-content stack-6 text-center">
+                <p class="t-eyebrow">What to Expect</p>
+                <h2 class="t-display t-display--section" style="margin-inline: auto;">
+                    HERE'S WHAT HAPPENS <span class="t-accent t-flicker">NEXT.</span>
+                </h2>
+            </div>
+            <div class="col-content">
+                <div class="inner-grid-2" style="gap: var(--space-8);">
+                    <div class="stack-4" style="border-left: 3px solid var(--color-brand); padding-left: var(--space-4);">
+                        <p class="t-eyebrow" style="color: var(--color-text-muted);">01</p>
+                        <p class="t-body t-body--md" style="color: var(--color-text-primary); font-weight: 600;">We read what you send.</p>
+                        <p class="t-body t-body--sm">Every word. Not a bot. Not an intern.</p>
+                    </div>
+                    <div class="stack-4" style="border-left: 3px solid var(--theme-accent-teal); padding-left: var(--space-4);">
+                        <p class="t-eyebrow" style="color: var(--color-text-muted);">02</p>
+                        <p class="t-body t-body--md" style="color: var(--color-text-primary); font-weight: 600;">We check your stuff.</p>
+                        <p class="t-body t-body--sm">Your site. Your Google profile. Your tracking. Before we ever get on a call.</p>
+                    </div>
+                    <div class="stack-4" style="border-left: 3px solid var(--theme-accent-yellow); padding-left: var(--space-4);">
+                        <p class="t-eyebrow" style="color: var(--color-text-muted);">03</p>
+                        <p class="t-body t-body--md" style="color: var(--color-text-primary); font-weight: 600;">We reach out within 48 hours.</p>
+                        <p class="t-body t-body--sm">With a real response. Not a canned email. Not a calendar link with no context.</p>
+                    </div>
+                    <div class="stack-4" style="border-left: 3px solid var(--color-brand); padding-left: var(--space-4);">
+                        <p class="t-eyebrow" style="color: var(--color-text-muted);">04</p>
+                        <p class="t-body t-body--md" style="color: var(--color-text-primary); font-weight: 600;">We talk.</p>
+                        <p class="t-body t-body--sm">10-15 minutes. We tell you what we found. You ask questions. We figure out if there's a fit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-content">
+                <div class="retro-box" style="padding: var(--space-8); margin-top: var(--space-4);">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--space-4); padding-bottom: var(--space-4); border-bottom: 1px solid var(--color-border);">
+                        <span class="status-dot status-dot--live"></span>
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--theme-accent-teal);">DIAGNOSTIC PROTOCOL</span>
+                    </div>
+                    <p class="t-body t-body--lg" style="color: var(--color-text-primary); font-weight: 600; margin-bottom: var(--space-3);">
+                        This isn't a sales call.
+                    </p>
+                    <p class="t-body t-body--md" style="margin-bottom: 0;">
+                        It's a system diagnostic. We come with answers, not a pitch deck. If we're a fit, great. If not, we'll tell you what to do next anyway.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — CLOSING STATEMENT -->
+    <section class="section section--padded surface-pure" style="border-top: 3px solid var(--color-brand);">
+        <div class="grid-page">
+            <div class="col-full text-center stack-6">
+                <h2 class="t-display t-display--section" style="margin-inline: auto;">
+                    TWO MINUTES TO FILL OUT.<br />
+                    <span class="t-accent t-flicker">48 HOURS TO HEAR BACK.</span>
+                </h2>
+                <p class="t-body t-body--lg" style="margin-inline: auto; max-width: 50ch; color: var(--color-text-muted);">No bullshit in between.</p>
+                <div>
+                    <a href="#contact-form" class="btn btn--primary btn--lg">Fill Out The Form →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</BaseLayout>

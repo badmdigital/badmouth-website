@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════════════════
+   UNIVERSAL DESIGN SYSTEM — Section Layout Shells
+   
+   RULE: No two consecutive sections may use the same shell.
+   
+   Shell Types:
+   A. Hero            — full-bleed, asymmetric, min-height
+   B. Statement       — centered narrow text block
+   C. Split           — asymmetric 7/5 or 5/7 content
+   D. Cards           — grid of cards (2, 3, or 4 columns)
+   E. Features        — alternating image/text rows
+   F. CTA             — full-bleed brand background
+   G. Proof           — social proof, testimonials, stats
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Shared Section Base ────────────────────────────── */
+.section {
+    position: relative;
+    overflow: hidden;
+}
+
+.section--padded {
+    padding-block: var(--space-24);
+}
+
+.section--padded-sm {
+    padding-block: var(--space-16);
+}
+
+@media (max-width: 768px) {
+    .section--padded {
+        padding-block: var(--space-12);
+    }
+
+    .section--padded-sm {
+        padding-block: var(--space-8);
+    }
+}
+
+/* ── Shell A: Hero ──────────────────────────────────── */
+.section--hero {
+    padding-top: var(--space-40);
+    padding-bottom: var(--space-24);
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .section--hero {
+        min-height: auto;
+        padding-top: var(--space-20);
+        padding-bottom: var(--space-12);
+    }
+}
+
+/* ── Shell B: Statement ─────────────────────────────── */
+.section--statement {
+    text-align: center;
+}
+
+.section--statement .t-display {
+    margin-inline: auto;
+}
+
+.section--statement .t-body {
+    margin-inline: auto;
+}
+
+/* ── Shell C: Split ─────────────────────────────────── */
+.section--split .grid-page {
+    align-items: center;
+}
+
+/* ── Shell D: Cards ─────────────────────────────────── */
+/* Uses inner-grid-2, inner-grid-3, or inner-grid-4 */
+
+/* ── Shell E: Features (alternating rows) ───────────── */
+.section--features .feature-row {
+    display: contents;
+}
+
+.section--features .feature-row:nth-child(even) .feature-text {
+    order: 2;
+}
+
+.section--features .feature-row:nth-child(even) .feature-media {
+    order: 1;
+}
+
+@media (max-width: 768px) {
+
+    .section--features .feature-row:nth-child(even) .feature-text,
+    .section--features .feature-row:nth-child(even) .feature-media {
+        order: unset;
+    }
+}
+
+/* ── Shell F: CTA ───────────────────────────────────── */
+.section--cta {
+    background: var(--color-brand);
+    color: var(--color-text-inverse);
+}
+
+.section--cta .t-display {
+    color: var(--color-text-inverse);
+}
+
+.section--cta .t-body {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.section--cta .btn--primary {
+    background: var(--color-surface-base);
+    color: var(--color-text-primary);
+    border-color: var(--color-surface-base);
+}
+
+.section--cta .btn--primary:hover {
+    background: var(--color-surface-inverse);
+    color: var(--color-text-inverse);
+    border-color: var(--color-surface-inverse);
+}
+
+/* ── Shell G: Proof / Stats ─────────────────────────── */
+.section--proof .stat-block {
+    text-align: center;
+    padding: var(--space-8);
+}
+
+.section--proof .stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    color: var(--color-brand);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+}
+
+.section--proof .stat-label {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+}
+
+/* ── Divider Lines ──────────────────────────────────── */
+.section-divider {
+    border: none;
+    height: 1px;
+    background: var(--color-border);
+    margin: 0;
+}
+
+.section-divider--thick {
+    height: 4px;
+    background: var(--color-text-primary);
+}
+
+.section-divider--brand {
+    height: 3px;
+    background: var(--color-brand);
+}
+
+/* ── Surface Colors (section backgrounds) ───────────── */
+.surface-base {
+    background-color: var(--color-surface-base);
+}
+
+.surface-elevated {
+    background-color: var(--color-surface-elevated);
+}
+
+.surface-sunken {
+    background-color: var(--color-surface-sunken);
+}
+
+.surface-pure {
+    background-color: var(--color-surface-pure);
+}
+
+.surface-brand {
+    background-color: var(--color-brand);
+}
+
+.surface-inverse {
+    background-color: var(--color-surface-inverse);
+}

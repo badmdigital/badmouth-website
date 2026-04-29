@@ -1,0 +1,695 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Lead Systems for Local Service Businesses | Badmouth Digital" currentPage="home">
+
+    <!-- SECTION 1 — HERO (Mechanical DOS in 2-Column Layout) -->
+    <section class="section section--hero surface-base noise-bg has-scanlines" style="position: relative; padding-bottom: var(--space-16);">
+        <div class="grid-page grid-align-center">
+            
+            <!-- Left Column: Copy & Actions -->
+            <div class="col-half-left stack-4" style="position: relative; z-index: 5; padding-right: var(--space-4);">
+                <p class="t-eyebrow" style="display: flex; align-items: center; gap: 8px;">
+                    <span class="status-dot status-dot--live"></span>
+                    <span class="sys-path">> /sys/lead-systems/local-service-businesses</span>
+                </p>
+                <h1 class="t-display t-display--hero">
+                    WE BUILD THE SYSTEM<br />
+                    <span class="t-crt-shake" style="color: var(--theme-accent-teal);">YOUR LEADS</span><br />
+                    <span class="t-flicker" style="color: var(--color-brand);">RUN THROUGH.</span>
+                </h1>
+                <p class="t-body t-body--lg" style="max-width: 55ch;">
+                    Leads come in. Shit falls through the cracks. We fix that.
+                </p>
+                <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center;">
+                    <a href="/contact" class="btn btn--primary btn--lg">Install Your System →</a>
+                    <a href="/see-the-system" class="btn btn--outline btn--lg">See How It Works</a>
+                </div>
+                <p class="hero-qualifier">For contractors & service businesses that are already getting work — not startups, not agencies.</p>
+            </div>
+
+            <!-- Right Column: Browser Window & Mechanical Grid -->
+            <div class="col-half-right" style="perspective: 1200px; position: relative; z-index: 5; padding-left: var(--space-4);">
+                <div class="browser-mockup" style="transform: rotateY(-6deg) rotateX(2deg); box-shadow: -20px 20px 60px rgba(0,0,0,0.8), 0 0 40px rgba(79, 209, 197, 0.15);">
+                    <div class="browser-mockup__header">
+                        <div class="browser-controls">
+                            <span class="dot dot--red"></span>
+                            <span class="dot dot--yellow"></span>
+                            <span class="dot dot--green"></span>
+                        </div>
+                        <div class="browser-url">badmouth.digital/kernel-init</div>
+                    </div>
+                    
+                    <div class="browser-mockup__body mech-flicker">
+                        <!-- Grain & Press Filter -->
+                        <div class="mech-ink-overlay"></div>
+                        
+                        <svg style="display: none;">
+                            <filter id="distort">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" />
+                                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+                            </filter>
+                        </svg>
+
+                        <div class="mech-container mechanical-distortion">
+                            <!-- BACKGROUND EFFECTS -->
+                            <div class="mech-bg-fx"></div>
+
+                            <!-- TOP SECTION -->
+                            <div class="mech-block mech-header-block">
+                                <span class="mech-label red-accent">System Architecture</span>
+                                <h1>LEAD_SYSTEM<br>V.09</h1>
+                            </div>
+
+                            <div class="mech-block mech-stat-block">
+                                <div>
+                                    <span class="mech-label">Kernel Identity</span>
+                                    <div class="mech-value" style="font-size: 0.9rem;">BADMOUTH OS_CORE</div>
+                                </div>
+                                <div class="mech-press-card yellow-accent" style="margin-top: auto; padding: 12px;">
+                                    <span class="mech-label">Memory Integrity</span>
+                                    <div class="mech-value" id="memory-counter" style="font-size: 0.9rem;">64400 KB</div>
+                                    <div class="loading-bar" style="margin-top: 6px;"><div class="loading-progress"></div></div>
+                                </div>
+                            </div>
+
+                            <!-- MAIN TERMINAL SECTION -->
+                            <div class="mech-block mech-main-terminal">
+                                <span class="mech-label green-accent" style="margin-bottom: 1rem;">Process Log</span>
+                                
+                                <div id="log-container" style="flex-grow: 1; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <div class="log-entry" style="animation-delay: 0.2s">> C:\RUN_BADMOUTH_OS.BAT <span class="green-accent">[OK]</span></div>
+                                    <div class="log-entry" style="animation-delay: 0.8s">> LOADING SYSTEM KERNEL... <span class="green-accent">[OK]</span></div>
+                                    <div class="log-entry" style="animation-delay: 1.4s">> BYPASSING LEGACY PROTOCOLS... <span class="red-accent">[TERMINATED]</span></div>
+                                    <div class="log-entry" style="animation-delay: 2.0s">> ROUTING LEAD BANDWIDTH... <span class="green-accent">[SYSTEM ACTIVE]</span></div>
+                                    <div class="log-entry" style="animation-delay: 2.6s">> ESTABLISHING LINK TO NEURAL GRID... <span class="green-accent">[OK]</span></div>
+                                    <div class="log-entry" style="animation-delay: 3.2s">> HANDSHAKE VERIFIED. ENCRYPTION ACTIVE.</div>
+                                    
+                                    <div class="log-entry" style="margin-top: 1rem; color: rgba(79, 209, 197, 0.8); animation-delay: 3.8s">
+                                        > SYSTEM_GOAL: AUTOMATED LEAD GENERATION,<br>TRACKING, AND MANAGEMENT.
+                                    </div>
+                                    <div class="log-entry" style="margin-top: auto; padding-top: 1rem; animation-delay: 4.4s">
+                                        > AWAITING COMMAND <span class="mech-cursor" style="animation-delay: 4.4s"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SIDEBAR DATA SECTION -->
+                            <div class="mech-block mech-sidebar-data">
+                                <div class="mech-press-card red-accent" style="padding: 12px;">
+                                    <span class="mech-label">Revenue Leak</span>
+                                    <div class="mech-value" style="font-size: 0.75rem;">DETECTED [CRITICAL]</div>
+                                </div>
+
+                                <div class="mech-press-card green-accent" style="flex-grow: 1; display: flex; flex-direction: column; padding: 12px;">
+                                    <span class="mech-label">Network Grid Map</span>
+                                    <div style="margin-top: 10px; font-size: 0.5rem; line-height: 1.4; opacity: 0.8;">
+                                        [<span style="color:#fff">■■■■</span>□□□□□□□□]<br>
+                                        [<span style="color:#fff">■■■■■■■■</span>□□□□]<br>
+                                        [<span style="color:#fff">■■■■■■■■■■■■</span>]<br>
+                                        [<span style="color:#fff">■■■■■</span>□□□□□□□]<br>
+                                        [<span style="color:#fff">■■■■■■■■■■</span>□□]
+                                    </div>
+                                    <div style="margin-top: auto; align-self: flex-end; font-weight: bold; padding-top: 0.5rem; font-size: 0.6rem;">
+                                        SYS_ACTIVE
+                                    </div>
+                                </div>
+
+                                <div class="mech-press-card yellow-accent" style="padding: 12px;">
+                                    <span class="mech-label">Encryption Key</span>
+                                    <div class="mech-value" style="font-size: 0.55rem; word-break: break-all; opacity: 0.8;">
+                                        A9-F2-55-B1-00-XE-88-12-C4
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DOS Ticker Strip -->
+        <div class="hero-ticker-wrap">
+            <div class="hero-ticker">
+                <span class="hero-ticker__track" id="ticker-track">
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> SYSTEMS INSTALLED: 47</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> REVENUE RECOVERED: $2.4M+</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> GOOGLE REVIEWS GENERATED: 1,200+</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> AVG RESPONSE TIME: &lt; 90 SECONDS</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> MISSED CALLS RECOVERED: 12,000+</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> CLIENT RETENTION RATE: 94%</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> ESTIMATE FOLLOW-UPS AUTOMATED: 8,400+</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> AVG CLOSE RATE INCREASE: +22%</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> INDUSTRIES SERVED: HVAC &middot; ROOFING &middot; PLUMBING &middot; ELECTRICAL &middot; CONCRETE &middot; LANDSCAPING</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> ZERO DUCT-TAPE SYSTEMS: CONFIRMED</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> SYSTEMS INSTALLED: 47</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> REVENUE RECOVERED: $2.4M+</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> GOOGLE REVIEWS GENERATED: 1,200+</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> AVG RESPONSE TIME: &lt; 90 SECONDS</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> MISSED CALLS RECOVERED: 12,000+</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> CLIENT RETENTION RATE: 94%</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> ESTIMATE FOLLOW-UPS AUTOMATED: 8,400+</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> AVG CLOSE RATE INCREASE: +22%</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> INDUSTRIES SERVED: HVAC &middot; ROOFING &middot; PLUMBING &middot; ELECTRICAL &middot; CONCRETE &middot; LANDSCAPING</span>
+                    <span class="hero-ticker__sep">///</span>
+                    <span class="hero-ticker__item"><span class="hero-ticker__prefix">&gt;</span> ZERO DUCT-TAPE SYSTEMS: CONFIRMED</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span class="scroll-indicator__label">Scroll</span>
+            <span class="scroll-indicator__chevron"></span>
+        </div>
+    </section>
+
+    <!-- Memory Counter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const memCounter = document.getElementById('memory-counter');
+            if(memCounter) {
+                let count = 0;
+                const target = 64400; // Match Badmouth's fake RAM
+                
+                function updateCounter() {
+                    if(count < target) {
+                        count += Math.floor(Math.random() * 2500);
+                        if(count > target) count = target;
+                        memCounter.innerText = count.toLocaleString() + " KB";
+                        requestAnimationFrame(updateCounter);
+                    }
+                }
+                updateCounter();
+            }
+        });
+    </script>
+
+    <!-- SECTION 2 — PROBLEM CLARIFICATION -->
+    <section class="section section--split section--padded surface-sunken">
+        <div class="grid-page grid-align-center">
+            <div class="col-half-left stack-4" style="padding-right: var(--space-6);">
+                <p class="t-eyebrow"><span class="sys-path">> /sys/diagnostics/problem</span></p>
+                <h2 class="t-display t-display--section">
+                    YOU DON'T NEED<br />
+                    <span class="t-accent t-flicker">MORE LEADS.</span>
+                </h2>
+                <p class="t-body t-body--lg" style="max-width: 55ch; color: var(--color-text-primary); font-weight: 600;">
+                    You need to stop losing the ones you already get.
+                </p>
+                <p class="t-body t-body--md" style="max-width: 55ch;">
+                    You're already getting calls. People find you on Google. Your buddy's neighbor told them about you. Demand isn't the problem.
+                </p>
+                <p class="t-body t-body--md" style="max-width: 55ch; color: var(--color-text-primary); font-weight: 600;">
+                    But then what happens?
+                </p>
+            </div>
+            <div class="col-half-right" style="padding-left: var(--space-4);">
+                <div class="retro-box retro-box--danger" style="padding: var(--space-6);">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--space-4); padding-bottom: var(--space-4); border-bottom: 1px solid rgba(255, 0, 51, 0.2);">
+                        <span class="status-dot status-dot--live"></span>
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-brand);">SYSTEM FAILURES DETECTED</span>
+                    </div>
+                    <div class="stack-3">
+                        <p class="t-body" style="font-size: 0.95rem;">✗ Phone rings while you're crawling through an attic. Gone.</p>
+                        <p class="t-body" style="font-size: 0.95rem;">✗ Form sits in an inbox nobody checks until Thursday.</p>
+                        <p class="t-body" style="font-size: 0.95rem;">✗ Follow-up? Maybe. If someone remembers.</p>
+                        <p class="t-body" style="font-size: 0.95rem;">✗ Reviews? Only when a customer goes out of their way.</p>
+                        <p class="t-body" style="font-size: 0.95rem;">✗ Which marketing is actually working? No damn clue.</p>
+                    </div>
+                    <span class="warning-label" style="margin-top: var(--space-4); font-size: 0.65rem;">⚠ WARNING: REVENUE LEAK</span>
+                    <a href="#what-we-do" class="btn btn--outline btn--sm" style="margin-top: var(--space-4); font-size: 0.75rem; align-self: flex-start;">→ See what a working system looks like</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 — REFRAME -->
+    <section class="section section--statement section--padded surface-base">
+        <div class="grid-page grid-gap-lg">
+            <div class="col-full text-center stack-4">
+                <p class="t-eyebrow"><span class="sys-path">> /sys/diagnostics/root-cause</span></p>
+                <h2 class="t-display t-display--section" style="margin-inline: auto; white-space: nowrap; text-align: center; max-width: none; text-wrap: unset;">
+                    THROWING MORE LEADS AT A <span class="t-crt-shake">BROKEN SYSTEM</span><br />
+                    <span class="t-accent t-flicker">JUST MAKES THE MESS MORE EXPENSIVE.</span>
+                </h2>
+                <p class="t-body t-body--md" style="margin-inline: auto; max-width: 80ch;">
+                    Most agencies want to sell you ads first. More clicks. More impressions. More leads pouring into the same leaky bucket.
+                </p>
+                <p class="t-body t-body--md" style="margin-inline: auto; max-width: 80ch;">
+                    That's like turning up the water pressure on a pipe full of holes. You're not growing. You're flooding.
+                </p>
+                <p class="t-body t-body--md" style="margin-inline: auto; max-width: 80ch; color: var(--color-text-primary); font-weight: 600;">
+                    Fix the system first. Then turn up the volume.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — PATHWAY INTRODUCTION (Cassette Cards) -->
+    <section class="section section--padded surface-elevated">
+        <div class="grid-page grid-gap-lg">
+            <div class="col-full text-center stack-4">
+                <p class="t-eyebrow"><span class="sys-path">> /sys/services</span></p>
+                <h2 class="t-display t-display--section" style="margin-inline: auto; white-space: nowrap;">
+                    WE BUILD THE SYSTEM FIRST.<br />
+                    <span class="t-accent t-flicker">THEN WE FEED IT</span>
+                </h2>
+                <p class="t-body t-body--lg" style="margin-inline: auto; max-width: 60ch;">
+                    Badmouth isn't an agency. We don't run campaigns and cross our fingers. We build connected lead systems for contractors and service businesses that already have demand but keep letting it leak.
+                </p>
+            </div>
+            <div class="col-full">
+                <div class="inner-grid-3">
+                    <!-- Layer 1: Foundation -->
+                    <a href="/foundation-install" class="cassette-card cassette-card--link cassette-card--hover-brand">
+                        <div class="cassette-card__header">
+                            <span class="cassette-card__label" style="font-size: 0.55rem; opacity: 0.7;">LAYER 01</span>
+                            <span class="warning-label warning-label--filled" style="font-size: 0.65rem; padding: 4px 8px;">⚡ START HERE</span>
+                        </div>
+                        <div class="cassette-card__body stack-3">
+                            <h3 class="t-display t-display--card">THE FOUNDATION</h3>
+                            <p class="t-body t-body--sm" style="color: var(--color-text-primary); font-weight: 600; margin-bottom: 4px;">Your Lead System.</p>
+                            <p class="t-body t-body--sm">Your website, CRM, automations, call tracking, review system, and dashboard. All connected. All actually working. We build this first because nothing else matters until it works.</p>
+                        </div>
+                        <div class="cassette-card__slider">
+                            <span class="slider-dot slider-dot--brand"></span>
+                            <div class="slider-track"><div class="slider-fill" style="width: 33%;"></div></div>
+                        </div>
+                    </a>
+
+                    <!-- Layer 2: Visibility -->
+                    <a href="/visibility" class="cassette-card cassette-card--link cassette-card--hover-teal">
+                        <div class="cassette-card__header">
+                            <span class="cassette-card__label" style="font-size: 0.55rem; opacity: 0.7;">LAYER 02</span>
+                            <span class="warning-label warning-label--teal" style="font-size: 0.65rem; padding: 4px 8px;">⚡ HIGH VOLTAGE</span>
+                        </div>
+                        <div class="cassette-card__body stack-3">
+                            <h3 class="t-display t-display--card">VISIBILITY</h3>
+                            <p class="t-body t-body--sm" style="color: var(--color-text-primary); font-weight: 600; margin-bottom: 4px;">Organic Growth.</p>
+                            <p class="t-body t-body--sm">SEO that builds over time. Service pages, area pages, local authority. Real organic growth on top of a system that actually converts the traffic.</p>
+                        </div>
+                        <div class="cassette-card__slider">
+                            <span class="slider-dot slider-dot--teal"></span>
+                            <div class="slider-track"><div class="slider-fill" style="width: 66%;"></div></div>
+                        </div>
+                    </a>
+
+                    <!-- Layer 3: Volume -->
+                    <a href="/volume" class="cassette-card cassette-card--link cassette-card--hover-yellow">
+                        <div class="cassette-card__header">
+                            <span class="cassette-card__label" style="font-size: 0.55rem; opacity: 0.7;">LAYER 03</span>
+                            <span class="warning-label warning-label--yellow" style="font-size: 0.65rem; padding: 4px 8px;">💥 EXPLOSIVE</span>
+                        </div>
+                        <div class="cassette-card__body stack-3">
+                            <h3 class="t-display t-display--card">VOLUME</h3>
+                            <p class="t-body t-body--sm" style="color: var(--color-text-primary); font-weight: 600; margin-bottom: 4px;">Paid Ads.</p>
+                            <p class="t-body t-body--sm">Paid ads pointed at a system that's ready for them. Google. Meta. Controlled traffic into something that can handle it. Not guesswork. Not gambling.</p>
+                        </div>
+                        <div class="cassette-card__slider">
+                            <span class="slider-dot slider-dot--yellow"></span>
+                            <div class="slider-track"><div class="slider-fill" style="width: 100%;"></div></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-full text-center">
+                <p class="t-body t-body--md" style="margin-inline: auto; max-width: 60ch; color: var(--color-text-primary); font-weight: 600;">
+                    Every layer builds on the one before it. Skip a layer and you're back to burning money and wondering why.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="/see-the-system" class="btn btn--primary">See The Full System →</a>
+                    <a href="/contact" class="btn btn--outline">Talk To Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 — PROOF / CASE STUDIES -->
+    <section class="section section--padded surface-sunken">
+        <div class="grid-page grid-gap-lg">
+            <div class="col-full text-center stack-4">
+                <p class="t-eyebrow"><span class="sys-path">> /sys/logs/client-results</span></p>
+                <h2 class="t-display t-display--section" style="margin-inline: auto;">
+                    THEY DIDN'T SPEND MORE<br />
+                    <span class="t-accent t-flicker">ON MARKETING.</span>
+                </h2>
+                <p class="t-body t-body--lg" style="margin-inline: auto; max-width: 55ch;">
+                    They just stopped wasting what they already had.
+                </p>
+            </div>
+
+            <!-- Case Study 1: Roofing -->
+            <div class="col-full">
+                <div class="card" style="border-left: 3px solid var(--color-brand); padding: var(--space-6);">
+                    <div class="grid-page grid-align-center" style="gap: var(--space-6);">
+                        <div class="col-left-5">
+                            <p class="t-eyebrow" style="color: var(--color-brand);">Roofing Contractor — $2.4M Revenue — 3 Sales Reps</p>
+                            <p class="t-body t-body--sm" style="margin-top: var(--space-2);">
+                                Spending $4,500/mo on Google Ads. Office manager left at 5 PM. Any leads generated in the evening or on weekends sat idle for 12–48 hours, leading to a massive drop-off rate. Competitors were beating them to the punch.
+                            </p>
+                        </div>
+                        <div class="col-right-7">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                                <div class="stack-2">
+                                    <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-muted);">Before</p>
+                                    <p class="t-body t-body--sm">• 60% of leads never reached</p>
+                                    <p class="t-body t-body--sm">• 12–48hr response time</p>
+                                    <p class="t-body t-body--sm">• Manual pipeline tracking</p>
+                                    <p class="t-body t-body--sm">• 14 Google reviews (8 years)</p>
+                                </div>
+                                <div class="stack-2">
+                                    <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--theme-accent-teal);">90 Days After</p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>85% lead contact rate</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>Instant 24/7 SMS response</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>Automated sales pipeline</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>62 New Google reviews</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2: Plumber -->
+            <div class="col-full">
+                <div class="card" style="border-left: 3px solid var(--theme-accent-teal); padding: var(--space-6);">
+                    <div class="grid-page grid-align-center" style="gap: var(--space-6);">
+                        <div class="col-left-5">
+                            <p class="t-eyebrow" style="color: var(--theme-accent-teal);">Plumber — Owner-Operator — Solo Shop</p>
+                            <p class="t-body t-body--sm" style="margin-top: var(--space-2);">
+                                One guy doing everything. Response time averaged 18–24 hours. He'd been in business 8 years with 14 Google reviews because he never had a system to ask.
+                            </p>
+                        </div>
+                        <div class="col-right-7">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                                <div class="stack-2">
+                                    <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-muted);">Before</p>
+                                    <p class="t-body t-body--sm">• 18–24hr response time</p>
+                                    <p class="t-body t-body--sm">• No CRM — notebook</p>
+                                    <p class="t-body t-body--sm">• 14 Google reviews</p>
+                                </div>
+                                <div class="stack-2">
+                                    <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--theme-accent-teal);">60 Days After</p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>Instant text-back</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>CRM logs every lead</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>25 Google reviews</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 3: Electrician -->
+            <div class="col-full">
+                <div class="card" style="border-left: 3px solid var(--theme-accent-yellow); padding: var(--space-6);">
+                    <div class="grid-page grid-align-center" style="gap: var(--space-6);">
+                        <div class="col-left-5">
+                            <p class="t-eyebrow" style="color: var(--theme-accent-yellow);">Electrician — 3 Trucks — 2 Office Staff</p>
+                            <p class="t-body t-body--sm" style="margin-top: var(--space-2);">
+                                Decent operation. Steady referral flow. But growth had flatlined. Office manager was manually calling back every form submission. Half the time, the customer had already called someone else.
+                            </p>
+                        </div>
+                        <div class="col-right-7">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                                <div class="stack-2">
+                                    <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-muted);">Before</p>
+                                    <p class="t-body t-body--sm">• 4+ hour form response</p>
+                                    <p class="t-body t-body--sm">• 2 hrs/day on manual follow-up</p>
+                                    <p class="t-body t-body--sm">• 22 Google reviews</p>
+                                </div>
+                                <div class="stack-2">
+                                    <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--theme-accent-yellow);">90 Days After</p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>Instant auto-response</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>8+ hrs/week reclaimed</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>69 Google reviews</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>$18K recovered from abandoned estimates</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 4: Concrete -->
+            <div class="col-full">
+                <div class="card" style="border-left: 3px solid var(--color-brand); padding: var(--space-6);">
+                    <div class="grid-page grid-align-center" style="gap: var(--space-6);">
+                        <div class="col-left-5">
+                            <p class="t-eyebrow" style="color: var(--color-brand);">Concrete & Flatwork Contractor — 4 Crews — $1.1M Revenue</p>
+                            <p class="t-body t-body--sm" style="margin-top: var(--space-2);">
+                                Mostly ran on referrals. Great reputation, solid work, zero internet presence. Estimates were quoted verbally — no follow-up, no tracking. Half the estimates they ran never turned into jobs, and they had no idea which half.
+                            </p>
+                        </div>
+                        <div class="col-right-7">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                                <div class="stack-2">
+                                    <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-muted);">Before</p>
+                                    <p class="t-body t-body--sm">• ~45% estimate-to-job rate</p>
+                                    <p class="t-body t-body--sm">• No follow-up process</p>
+                                    <p class="t-body t-body--sm">• 11 Google reviews (6 years)</p>
+                                    <p class="t-body t-body--sm">• Zero online visibility</p>
+                                </div>
+                                <div class="stack-2">
+                                    <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-brand);">6 Months After</p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>68% estimate-to-job rate</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>Automated estimate follow-up</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>54 Google reviews</strong></p>
+                                    <p class="t-body t-body--sm" style="color: var(--color-text-primary);">• <strong>+$210K in tracked revenue</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pull quote elevated -->
+            <div class="col-full" style="border-top: 1px solid var(--color-border); padding-top: var(--space-10); margin-top: var(--space-4);">
+                <p class="t-display t-display--section" style="margin-inline: auto; text-align: center; max-width: 22ch;">
+                    "If we disappeared tomorrow, your system would still be running.
+                    <span class="t-accent t-flicker"> That's the whole point.</span>"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 — OFFER FRAMING -->
+    <section class="section section--padded surface-base">
+        <div class="grid-page grid-align-center grid-gap-lg">
+            <div class="col-left-5">
+                <div class="retro-box" style="padding: var(--space-6);">
+                    <p class="t-body" style="color: var(--theme-accent-teal); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.7rem; margin-bottom: var(--space-4);">What we build and install:</p>
+                    <div class="stack-2">
+                        <p class="t-body t-body--sm">✓ Website built to convert</p>
+                        <p class="t-body t-body--sm">✓ Service pages and area pages that rank</p>
+                        <p class="t-body t-body--sm">✓ CRM with a lead pipeline you'll use</p>
+                        <p class="t-body t-body--sm">✓ Missed call text-back (automatic)</p>
+                        <p class="t-body t-body--sm">✓ Email and text follow-up on autopilot</p>
+                        <p class="t-body t-body--sm">✓ Review system that builds reputation</p>
+                        <p class="t-body t-body--sm">✓ AI site assistant — 24/7</p>
+                        <p class="t-body t-body--sm">✓ Call tracking — every lead sourced</p>
+                        <p class="t-body t-body--sm">✓ Dashboard with real numbers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-right-7 stack-4">
+                <p class="t-eyebrow"><span class="sys-path">> /sys/install/foundation</span></p>
+                <h2 class="t-display t-display--section">
+                    A COMPLETE <span class="t-crt-shake">LEAD SYSTEM.</span><br />
+                    <span class="t-accent t-flicker">BUILT AND INSTALLED INSIDE YOUR BUSINESS.</span>
+                </h2>
+                <p class="t-body t-body--md" style="max-width: 55ch;">
+                    This isn't a website redesign. It's the operating system your business runs on.
+                </p>
+                <p class="t-body t-body--md" style="max-width: 55ch;">
+                    Everything talks to everything. If traffic stopped tomorrow, your system would still be running.
+                </p>
+                <div style="margin-top: var(--space-2);">
+                    <a href="/foundation-install" class="btn btn--primary">Install Your System →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6B — AGENCY VS. BADMOUTH -->
+    <section class="section section--padded surface-elevated">
+        <div class="grid-page grid-gap-lg">
+            <div class="col-full text-center stack-4">
+                <h2 class="t-display t-display--section" style="margin-inline: auto;">
+                    THIS ISN'T <span class="t-accent t-flicker">WHAT YOU'RE USED TO.</span>
+                </h2>
+            </div>
+            <div class="col-full">
+                <div class="inner-grid-2">
+                    <!-- Typical Agency -->
+                    <div class="card stack-3" style="border-top: 3px solid var(--color-text-muted);">
+                        <p style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-muted); margin-bottom: var(--space-2);">The Typical Agency</p>
+                        <p class="t-body t-body--sm">✗ Sells you ads before your site can convert</p>
+                        <p class="t-body t-body--sm">✗ Reports clicks and impressions</p>
+                        <p class="t-body t-body--sm">✗ Needs constant creative cycles to keep working</p>
+                        <p class="t-body t-body--sm">✗ Goes quiet after month one</p>
+                        <p class="t-body t-body--sm" style="color: var(--color-brand);">✗ If they leave, the marketing stops</p>
+                    </div>
+                    <!-- Badmouth -->
+                    <div class="card stack-3" style="border-top: 3px solid var(--theme-accent-teal);">
+                        <p style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--theme-accent-teal); margin-bottom: var(--space-2);">Badmouth</p>
+                        <p class="t-body t-body--sm" style="color: var(--color-text-primary);">✓ Builds the system first, then drives traffic</p>
+                        <p class="t-body t-body--sm" style="color: var(--color-text-primary);">✓ Tracks actual jobs, not vanity numbers</p>
+                        <p class="t-body t-body--sm" style="color: var(--color-text-primary);">✓ Installs a system that runs continuously</p>
+                        <p class="t-body t-body--sm" style="color: var(--color-text-primary);">✓ Monthly maintenance keeps everything running</p>
+                        <p class="t-body t-body--sm" style="color: var(--theme-accent-teal); font-weight: 600;">✓ If we leave, the system keeps running</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-full text-center">
+                <p class="t-body t-body--md" style="margin-inline: auto; max-width: 55ch; color: var(--color-text-primary); font-weight: 600;">
+                    That last line is the whole difference. We build something that works without us. Most agencies build something that only works because of them.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7 — PRIMARY CTA -->
+    <section class="section section--cta section--padded section--mic-drop has-scanlines" style="position: relative;">
+        <div class="grid-page" style="position: relative; z-index: 2;">
+            <div class="col-full text-center stack-4">
+                <h2 class="t-display t-display--section" style="color: #fff; margin-inline: auto;">
+                    THIS IS FOR BUSINESSES THAT ARE<br />
+                    <span class="mic-drop__headline">DONE WINGING IT.</span>
+                </h2>
+                <p class="t-body t-body--lg" style="margin-inline: auto; max-width: 55ch; margin-top: var(--space-2);">
+                    If you're already getting work, have real services, and can handle more jobs — this was built for you.
+                </p>
+                <p class="t-body t-body--md" style="margin-inline: auto; max-width: 55ch;">
+                    We don't take everyone. We take businesses that are ready to stop duct-taping it and run inside a real system.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-2);">
+                    <a href="/contact" class="btn btn--lg">Apply to Install Your System →</a>
+                    <a href="/contact" class="btn btn--lg" style="background: #fff; color: var(--color-brand); border-color: #fff; font-weight: 700;">Got Questions? Let's Talk</a>
+                </div>
+                <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #ffffff; text-transform: uppercase; letter-spacing: 0.1em; margin-top: var(--space-3);">
+                    Takes 5 minutes. We review it in 48 hours. No pitch on the first call.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8 — FINAL OBJECTION CRUSHER -->
+    <section class="section section--padded-sm surface-sunken">
+        <div class="grid-page">
+            <div class="col-full text-center stack-3">
+                <p style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-muted);">The most common objection</p>
+                <p class="t-display t-display--subsection" style="margin-inline: auto; max-width: none; white-space: nowrap; color: var(--color-text-primary);">
+                    "We're not sure we're ready for this yet."
+                </p>
+                <p class="t-body t-body--md" style="margin-inline: auto; max-width: 55ch;">
+                    Neither were any of our clients before we ran a diagnostic. That's what the first call is. We look at your current setup, tell you exactly what's leaking, and give you a real answer — not a sales pitch.
+                </p>
+                <div style="margin-top: var(--space-2);">
+                    <a href="/contact" class="btn btn--outline">Get The Diagnostic →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<style>
+    .sys-path {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        color: var(--theme-accent-teal);
+        opacity: 0.8;
+    }
+
+    /* ── Hero Qualifier ── */
+    .hero-qualifier {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--color-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        line-height: 1.5;
+        margin-top: var(--space-1);
+        max-width: 50ch;
+    }
+
+    /* ── DOS Ticker Strip ── */
+    .hero-ticker-wrap {
+        position: absolute;
+        bottom: 56px;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(0, 0, 0, 0.3);
+        padding: 10px 0;
+        z-index: 3;
+        /* Left/right fade mask */
+        mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+
+    .hero-ticker {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .hero-ticker__track {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-6);
+        white-space: nowrap;
+        animation: ticker-scroll 60s linear infinite;
+    }
+
+    .hero-ticker__item {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--color-text-muted);
+        flex-shrink: 0;
+    }
+
+    .hero-ticker__prefix {
+        color: var(--theme-accent-teal);
+        margin-right: 4px;
+    }
+
+    .hero-ticker__sep {
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        color: var(--color-brand);
+        opacity: 0.5;
+        flex-shrink: 0;
+    }
+
+    @keyframes ticker-scroll {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+</style>
+
+</BaseLayout>

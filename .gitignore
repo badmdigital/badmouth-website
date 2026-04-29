@@ -40,3 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .gstack/
+
+# Astro archive — exclude build outputs only, keep source
+_archive/**/node_modules
+_archive/**/dist
+_archive/**/.astro
+_archive/**/.vercel/output

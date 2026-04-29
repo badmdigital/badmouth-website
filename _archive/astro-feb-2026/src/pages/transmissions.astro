@@ -1,0 +1,532 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = [
+    {
+        title: "Why Your SEO Strategy Is Garbage (And How to Fix It)",
+        excerpt: "Stop chasing algorithms and start building an empire. Here's why your 'safe' strategy is killing your traffic.",
+        category: "Nobody Finds Me",
+        slug: "seo-strategy-is-garbage",
+        date: "Feb 20, 2026",
+        readTime: "7 min",
+        wordCount: "1,842",
+        featured: true,
+    },
+    {
+        title: "Your Website Isn't Broken. Your System Is.",
+        excerpt: "That pretty site cost you five grand and books zero jobs. Here's what's actually missing behind the scenes.",
+        category: "Website Not Working",
+        slug: "your-website-isnt-broken",
+        date: "Feb 15, 2026",
+        readTime: "5 min",
+        wordCount: "1,356",
+        featured: false,
+    },
+    {
+        title: "Ad Spend or Bonfire? You Decide.",
+        excerpt: "Are you investing or just keeping warm? How to tell if your PPC agency is taking you for a ride.",
+        category: "Wasting Money on Ads",
+        slug: "ad-spend-or-bonfire",
+        date: "Feb 10, 2026",
+        readTime: "6 min",
+        wordCount: "1,580",
+        featured: false,
+    },
+    {
+        title: "The Agency Burned You. Now What?",
+        excerpt: "You got ghosted, overcharged, and underwhelmed. Here's how to vet the next one (or do it yourself).",
+        category: "Been Burned Before",
+        slug: "agency-burned-you",
+        date: "Feb 5, 2026",
+        readTime: "5 min",
+        wordCount: "1,290",
+        featured: false,
+    },
+    {
+        title: "You Don't Have a Marketing Problem",
+        excerpt: "You have a 'what the hell is working' problem. Here's how to figure out what's actually driving your business.",
+        category: "Don't Know What's Working",
+        slug: "you-dont-have-a-marketing-problem",
+        date: "Jan 30, 2026",
+        readTime: "6 min",
+        wordCount: "1,475",
+        featured: false,
+    },
+    {
+        title: "Stop Skipping Steps",
+        excerpt: "Everybody wants to jump to ads. Here's why doing things in order is the fastest path to results.",
+        category: "Website Not Working",
+        slug: "stop-skipping-steps",
+        date: "Jan 25, 2026",
+        readTime: "4 min",
+        wordCount: "1,110",
+        featured: false,
+    },
+];
+
+const categories = [
+    "All",
+    "Website Not Working",
+    "Nobody Finds Me",
+    "Wasting Money on Ads",
+    "Don't Know What's Working",
+    "Been Burned Before",
+];
+---
+
+<BaseLayout title="Transmissions" description="Real marketing breakdowns for local service businesses. No fluff, no theory, no corporate jargon. Just what works and what doesn't." currentPage="transmissions">
+
+    <!-- SECTION 1 — BROADCAST HERO -->
+    <section class="broadcast-hero surface-base noise-bg">
+        <div class="broadcast-hero__bg"></div>
+        <div class="grid-page" style="position: relative; z-index: 2;">
+            <div class="col-content stack-6">
+
+                <!-- On Air Indicator -->
+                <div class="on-air-badge">
+                    <span class="on-air-badge__dot"></span>
+                    <span class="on-air-badge__text">ON AIR</span>
+                    <span class="on-air-badge__freq">FM 666.0</span>
+                </div>
+
+                <h1 class="t-display t-display--hero broadcast-hero__title">
+                    <span style="color: var(--color-brand);">TRANSMISSIONS</span>
+                </h1>
+
+                <p class="t-body t-body--lg" style="max-width: 55ch;">
+                    No fluff. No theory. No "10 Ways to Boost Your Engagement." Just real marketing breakdowns for people who do real work.
+                </p>
+
+                <!-- Signal Meter -->
+                <div class="signal-meter">
+                    <div class="signal-meter__bars">
+                        <span class="signal-meter__bar signal-meter__bar--1"></span>
+                        <span class="signal-meter__bar signal-meter__bar--2"></span>
+                        <span class="signal-meter__bar signal-meter__bar--3"></span>
+                        <span class="signal-meter__bar signal-meter__bar--4"></span>
+                        <span class="signal-meter__bar signal-meter__bar--5"></span>
+                    </div>
+                    <span class="signal-meter__label">SIGNAL STRENGTH</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 2 — FIND YOUR FREQUENCY (Filter + Posts) -->
+    <section class="section section--padded surface-sunken">
+        <div class="grid-page grid-gap-lg">
+            <div class="col-full text-center stack-6">
+                <p class="t-eyebrow">Browse by Problem</p>
+                <h2 class="t-display t-display--section" style="margin-inline: auto;">
+                    FIND YOUR <span class="t-accent t-flicker">FREQUENCY.</span>
+                </h2>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="col-full">
+                <div class="freq-filters" id="freq-filters">
+                    {categories.map((cat, i) => (
+                        <button
+                            class:list={['freq-filter', { 'freq-filter--active': i === 0 }]}
+                            data-category={cat}
+                        >
+                            <span class="freq-filter__label">{cat}</span>
+                            {i === 0 && <span class="freq-filter__badge freq-filter__badge--brand">ALL</span>}
+                            {cat === "Website Not Working" && <span class="freq-filter__badge freq-filter__badge--brand">⚡ CRITICAL</span>}
+                            {cat === "Nobody Finds Me" && <span class="freq-filter__badge freq-filter__badge--teal">⚡ HIGH VOLTAGE</span>}
+                            {cat === "Wasting Money on Ads" && <span class="freq-filter__badge freq-filter__badge--yellow">💥 EXPLOSIVE</span>}
+                            {cat === "Don't Know What's Working" && <span class="freq-filter__badge freq-filter__badge--muted">⚙ DIAGNOSTIC</span>}
+                            {cat === "Been Burned Before" && <span class="freq-filter__badge freq-filter__badge--brand">🚩 WARNING</span>}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            <!-- Posts Grid -->
+            <div class="col-full">
+                <div class="inner-grid-2" style="gap: var(--space-6);" id="posts-grid">
+                    {posts.map((post) => (
+                        <a href={`/transmissions/${post.slug}`} class:list={['transmission-card', { 'transmission-card--featured': post.featured }]} data-post-category={post.category} style="text-decoration: none;">
+                            <div class="transmission-card__header">
+                                <span class="transmission-card__date">{post.date}</span>
+                                {post.featured && (
+                                    <span class="transmission-card__badge">⚠ LATEST</span>
+                                )}
+                                {!post.featured && (
+                                    <span class="transmission-card__time">{post.readTime} read</span>
+                                )}
+                            </div>
+                            <h3 class="t-display t-display--card transmission-card__title">
+                                {post.title}
+                            </h3>
+                            <p class="t-body t-body--sm">{post.excerpt}</p>
+                            <div class="transmission-card__footer">
+                                <div class="transmission-card__meta">
+                                    <span class="transmission-card__category">{post.category}</span>
+                                    <span class="transmission-card__word-count">{post.wordCount} words</span>
+                                </div>
+                                <span class="transmission-card__cta">Read →</span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 — CTA -->
+    <section class="section section--cta section--padded section--mic-drop has-scanlines" style="position: relative;">
+        <div class="grid-page" style="position: relative; z-index: 2;">
+            <div class="col-content text-center stack-4">
+                <h2 class="t-display t-display--section" style="color: #fff; margin-inline: auto;">
+                    DONE READING?<br />
+                    <span class="mic-drop__headline">LET'S FIX YOURS.</span>
+                </h2>
+                <p class="t-body t-body--lg" style="margin-inline: auto; max-width: 50ch; margin-top: var(--space-4);">
+                    These posts give you the playbook. If you want someone to run it for you, that's what we do.
+                </p>
+                <a href="/contact" class="btn btn--lg">Diagnose Your System →</a>
+            </div>
+        </div>
+    </section>
+
+</BaseLayout>
+
+<style>
+    /* ── Broadcast Hero ───────────────────────────────── */
+    .broadcast-hero {
+        position: relative;
+        min-height: auto;
+        padding: var(--space-24) 0 var(--space-12);
+        overflow: hidden;
+    }
+
+    .broadcast-hero__bg {
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse at 20% 50%, rgba(255, 0, 51, 0.08) 0%, transparent 60%),
+            radial-gradient(ellipse at 80% 30%, rgba(255, 0, 51, 0.04) 0%, transparent 50%);
+        z-index: 1;
+    }
+
+    .broadcast-hero__title {
+        position: relative;
+    }
+
+    /* Static noise lines */
+    .broadcast-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.01) 2px,
+            rgba(255, 255, 255, 0.01) 4px
+        );
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    /* ── On Air Badge ─────────────────────────────────── */
+    .on-air-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        background: rgba(255, 0, 51, 0.1);
+        border: 1px solid rgba(255, 0, 51, 0.3);
+    }
+
+    .on-air-badge__dot {
+        width: 8px;
+        height: 8px;
+        background: var(--color-brand);
+        border-radius: 50%;
+        animation: on-air-pulse 1.5s ease infinite;
+        box-shadow: 0 0 6px var(--color-brand), 0 0 12px rgba(255, 0, 51, 0.3);
+    }
+
+    .on-air-badge__text {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--color-brand);
+    }
+
+    .on-air-badge__freq {
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-text-muted);
+        padding-left: 10px;
+        border-left: 1px solid rgba(255, 0, 51, 0.2);
+    }
+
+    @keyframes on-air-pulse {
+        0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--color-brand), 0 0 12px rgba(255, 0, 51, 0.3); }
+        50% { opacity: 0.4; box-shadow: 0 0 2px var(--color-brand); }
+    }
+
+    /* ── Signal Meter ─────────────────────────────────── */
+    .signal-meter {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .signal-meter__bars {
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+        height: 20px;
+    }
+
+    .signal-meter__bar {
+        width: 4px;
+        background: var(--color-brand);
+        animation: bar-pulse 2s ease-in-out infinite;
+    }
+
+    .signal-meter__bar--1 { height: 4px; animation-delay: 0s; }
+    .signal-meter__bar--2 { height: 8px; animation-delay: 0.15s; }
+    .signal-meter__bar--3 { height: 12px; animation-delay: 0.3s; }
+    .signal-meter__bar--4 { height: 16px; animation-delay: 0.45s; }
+    .signal-meter__bar--5 { height: 20px; animation-delay: 0.6s; }
+
+    @keyframes bar-pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+    }
+
+    .signal-meter__label {
+        font-family: var(--font-mono);
+        font-size: 0.55rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--color-text-muted);
+    }
+
+    /* ── Pulse animation (kept for compat) ──────────── */
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+    }
+
+    /* ── Frequency Filter Buttons ─────────────────────── */
+    .freq-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        justify-content: center;
+    }
+
+    .freq-filter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 16px;
+        background: var(--color-surface-base);
+        border: 1px solid var(--color-border);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-width: 160px;
+    }
+
+    .freq-filter:hover {
+        border-color: var(--color-text-muted);
+    }
+
+    .freq-filter--active {
+        border-color: var(--color-brand);
+        box-shadow: 0 0 0 1px var(--color-brand);
+    }
+
+    .freq-filter__label {
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-text-primary);
+    }
+
+    .freq-filter__badge {
+        font-family: var(--font-mono);
+        font-size: 0.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: 3px 8px;
+        border: 1px solid;
+        white-space: nowrap;
+    }
+
+    .freq-filter__badge--brand {
+        color: var(--color-brand);
+        border-color: var(--color-brand);
+    }
+
+    .freq-filter__badge--teal {
+        color: var(--theme-accent-teal);
+        border-color: var(--theme-accent-teal);
+    }
+
+    .freq-filter__badge--yellow {
+        color: var(--theme-accent-yellow);
+        border-color: var(--theme-accent-yellow);
+    }
+
+    .freq-filter__badge--muted {
+        color: var(--color-text-muted);
+        border-color: var(--color-border);
+    }
+
+    /* ── Transmission Cards ───────────────────────────── */
+    .transmission-card {
+        background: var(--color-surface-elevated);
+        border: 1px solid var(--color-border);
+        padding: var(--space-6);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        transition: all 0.2s ease;
+        color: inherit;
+    }
+
+    .transmission-card:hover {
+        border-color: var(--color-brand);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .transmission-card--featured {
+        border: 2px solid var(--color-brand);
+        grid-column: 1 / -1;
+    }
+
+    @media (min-width: 769px) {
+        .transmission-card--featured {
+            grid-column: 1 / 2;
+        }
+    }
+
+    .transmission-card__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: var(--space-3);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .transmission-card__date {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-brand);
+    }
+
+    .transmission-card__time {
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-text-muted);
+        border: 1px solid var(--color-border);
+        padding: 2px 8px;
+    }
+
+    .transmission-card__badge {
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        background: var(--theme-accent-yellow);
+        color: var(--color-surface-base);
+        padding: 3px 10px;
+        border: 1px solid var(--color-surface-base);
+    }
+
+    .transmission-card__title {
+        margin: 0;
+    }
+
+    .transmission-card__footer {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .transmission-card__meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .transmission-card__category {
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-text-muted);
+    }
+
+    .transmission-card__word-count {
+        font-family: var(--font-mono);
+        font-size: 0.55rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--color-border);
+    }
+
+    .transmission-card__cta {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-brand);
+    }
+
+    /* Hidden state for filtering */
+    .transmission-card--hidden {
+        display: none;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filters = document.querySelectorAll('.freq-filter');
+        const cards = document.querySelectorAll('.transmission-card');
+
+        filters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filters.forEach(f => f.classList.remove('freq-filter--active'));
+                btn.classList.add('freq-filter--active');
+
+                const category = btn.dataset.category;
+
+                cards.forEach(card => {
+                    if (category === 'All' || card.dataset.postCategory === category) {
+                        card.classList.remove('transmission-card--hidden');
+                    } else {
+                        card.classList.add('transmission-card--hidden');
+                    }
+                });
+            });
+        });
+    });
+</script>

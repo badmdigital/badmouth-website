@@ -1,0 +1,694 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="See The System | Badmouth Digital" description="Every lead follows a path. Nothing depends on you remembering to do it." currentPage="see-the-system">
+
+    <!-- SECTION 1 — HERO -->
+    <section class="section section--hero surface-base noise-bg has-scanlines" style="position: relative; min-height: auto; padding-top: var(--space-24); padding-bottom: var(--space-16);">
+        <div class="grid-page grid-align-center">
+
+            <!-- Left Column: Copy -->
+            <div class="col-half-left stack-4" style="position: relative; z-index: 5; padding-right: var(--space-4);">
+                <p class="t-eyebrow" style="display: flex; align-items: center; gap: 8px;">
+                    <span class="status-dot status-dot--live"></span>
+                    <span class="sys-path">> /sys/pipeline/overview</span>
+                </p>
+                <h1 class="t-display t-display--hero">
+                    EVERY LEAD<br />
+                    <span class="t-crt-shake" style="color: var(--theme-accent-teal);">FOLLOWS</span><br />
+                    <span class="t-flicker" style="color: var(--color-brand);">A PATH.</span>
+                </h1>
+                <p class="t-body t-body--lg" style="max-width: 52ch; color: var(--color-text-primary); font-weight: 600;">
+                    Nothing depends on you remembering to do it.
+                </p>
+                <p class="t-body t-body--md" style="max-width: 52ch;">
+                    Most contractors have a pile of disconnected tools. Website that doesn't track anything. CRM they signed up for and never opened. Call tracking from two vendors ago. None of it talks to each other.
+                </p>
+                <p class="t-body t-body--md" style="max-width: 52ch; color: var(--color-text-primary); font-weight: 600;">
+                    We wire it all into one system. Here's what each piece does and how it connects.
+                </p>
+            </div>
+
+            <!-- Right Column: System Pipeline Graphic -->
+            <div class="col-half-right" style="perspective: 1200px; position: relative; z-index: 5; padding-left: var(--space-4);">
+                <div class="browser-mockup" style="transform: rotateY(-5deg) rotateX(2deg); box-shadow: -20px 20px 60px rgba(0,0,0,0.8), 0 0 40px rgba(79,209,197,0.12);">
+                    <div class="browser-mockup__header">
+                        <div class="browser-controls">
+                            <span class="dot dot--red"></span>
+                            <span class="dot dot--yellow"></span>
+                            <span class="dot dot--green"></span>
+                        </div>
+                        <div class="browser-url">badmouth.digital/sys-pipeline</div>
+                    </div>
+
+                    <div class="browser-mockup__body mech-flicker">
+                        <div class="mech-ink-overlay"></div>
+
+                        <div class="mech-container" style="padding: 14px; display: flex; flex-direction: column; gap: 10px; min-height: 420px;">
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                                <div>
+                                    <span class="mech-label red-accent" style="display:block; margin-bottom:3px;">Pipeline Architecture</span>
+                                    <div style="font-family: var(--font-mono, monospace); font-size: 1rem; font-weight: 900; letter-spacing: 0.05em; color: #fff; line-height: 1;">LEAD_PATH<span class="red-accent"> V.09</span></div>
+                                </div>
+                                <div style="text-align:right; display: flex; flex-direction: column; gap: 4px;">
+                                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 1px;">
+                                        <span class="mech-label" style="display:block;">Leads Processed</span>
+                                        <div class="mech-value green-accent" id="sysLeadCounter" style="font-size: 0.85rem;">0</div>
+                                    </div>
+                                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 1px;">
+                                        <span class="mech-label" style="display:block;">Uptime</span>
+                                        <div class="mech-value" id="sysUptime" style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">00h 00m 00s</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex-direction: column; gap: 6px; flex: 1;">
+
+                                <div class="sys-pipe-node sys-pipe-node--entry" id="pipeNode1">
+                                    <div class="sys-pipe-icon" style="color: var(--color-brand, #ff003c);">▶</div>
+                                    <div class="sys-pipe-content">
+                                        <span class="sys-pipe-label">LEAD ARRIVES</span>
+                                        <span class="sys-pipe-tag red-accent">INBOUND</span>
+                                    </div>
+                                    <div class="sys-pipe-status red-accent">LIVE</div>
+                                </div>
+
+                                <div class="sys-pipe-arrow"><div class="sys-pipe-arrow__line"></div><div class="sys-pipe-arrow__packet" style="animation-delay: 0.1s;"></div></div>
+
+                                <div class="sys-pipe-node" id="pipeNode2">
+                                    <div class="sys-pipe-icon" style="color: var(--color-brand, #ff003c);">◎</div>
+                                    <div class="sys-pipe-content">
+                                        <span class="sys-pipe-label">SERVICE PAGES</span>
+                                        <span class="sys-pipe-tag" style="color: rgba(255,255,255,0.4);">CONVERTS TRAFFIC</span>
+                                    </div>
+                                    <div class="sys-pipe-status green-accent">OK</div>
+                                </div>
+
+                                <div class="sys-pipe-arrow"><div class="sys-pipe-arrow__line"></div><div class="sys-pipe-arrow__packet" style="animation-delay: 0.8s;"></div></div>
+
+                                <div class="sys-pipe-node" id="pipeNode3">
+                                    <div class="sys-pipe-icon" style="color: var(--theme-accent-teal, #4fd1c5);">◎</div>
+                                    <div class="sys-pipe-content">
+                                        <span class="sys-pipe-label">LEAD CAPTURE</span>
+                                        <span class="sys-pipe-tag" style="color: rgba(255,255,255,0.4);">EVERY CALL. EVERY FORM.</span>
+                                    </div>
+                                    <div class="sys-pipe-status green-accent">OK</div>
+                                </div>
+
+                                <div class="sys-pipe-arrow"><div class="sys-pipe-arrow__line"></div><div class="sys-pipe-arrow__packet" style="animation-delay: 1.4s;"></div></div>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                                    <div class="sys-pipe-node sys-pipe-node--sm" id="pipeNode4">
+                                        <div class="sys-pipe-icon" style="color: var(--theme-accent-yellow, #f6c90f); font-size: 0.65rem;">◎</div>
+                                        <div class="sys-pipe-content">
+                                            <span class="sys-pipe-label" style="font-size: 0.5rem;">AUTO FOLLOW-UP</span>
+                                            <span class="sys-pipe-tag" style="color: rgba(255,255,255,0.35); font-size: 0.42rem;">SMS + EMAIL</span>
+                                        </div>
+                                        <div class="sys-pipe-status green-accent" style="font-size: 0.45rem;">RUN</div>
+                                    </div>
+                                    <div class="sys-pipe-node sys-pipe-node--sm" id="pipeNode5">
+                                        <div class="sys-pipe-icon" style="color: var(--color-brand, #ff003c); font-size: 0.65rem;">◎</div>
+                                        <div class="sys-pipe-content">
+                                            <span class="sys-pipe-label" style="font-size: 0.5rem;">REVIEW ENGINE</span>
+                                            <span class="sys-pipe-tag" style="color: rgba(255,255,255,0.35); font-size: 0.42rem;">AUTO-REQUEST</span>
+                                        </div>
+                                        <div class="sys-pipe-status green-accent" style="font-size: 0.45rem;">RUN</div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-pipe-arrow"><div class="sys-pipe-arrow__line"></div><div class="sys-pipe-arrow__packet" style="animation-delay: 2.0s;"></div></div>
+
+                                <div class="sys-pipe-node" id="pipeNode6">
+                                    <div class="sys-pipe-icon" style="color: var(--theme-accent-teal, #4fd1c5);">◎</div>
+                                    <div class="sys-pipe-content">
+                                        <span class="sys-pipe-label">TRACKING + ATTRIBUTION</span>
+                                        <span class="sys-pipe-tag" style="color: rgba(255,255,255,0.4);">EVERY SOURCE LOGGED</span>
+                                    </div>
+                                    <div class="sys-pipe-status green-accent">OK</div>
+                                </div>
+
+                                <div class="sys-pipe-arrow"><div class="sys-pipe-arrow__line"></div><div class="sys-pipe-arrow__packet" style="animation-delay: 2.6s;"></div></div>
+
+                                <div class="sys-pipe-node sys-pipe-node--terminal" id="pipeNode7">
+                                    <div class="sys-pipe-icon" style="color: var(--theme-accent-teal, #4fd1c5);">▣</div>
+                                    <div class="sys-pipe-content">
+                                        <span class="sys-pipe-label">DASHBOARD</span>
+                                        <span class="sys-pipe-tag" style="color: rgba(79,209,197,0.7);">ONE SCREEN. ALL NUMBERS.</span>
+                                    </div>
+                                    <div class="sys-pipe-status" style="color: var(--theme-accent-teal); font-weight:900;">LIVE</div>
+                                </div>
+
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.08);">
+                                <span style="font-family: var(--font-mono, monospace); font-size: 0.45rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35);">&gt; SYS_STATUS: ALL NODES ACTIVE</span>
+                                <span class="mech-cursor"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="scroll-indicator__label">Scroll</span>
+            <span class="scroll-indicator__chevron"></span>
+        </div>
+    </section>
+
+    <!-- TICKER STRIP -->
+    <div class="sys-ticker" aria-hidden="true">
+        <div class="sys-ticker__track">
+            <span>LEAD CAPTURED</span><span class="sys-ticker__sep">→</span>
+            <span>INSTANT TEXT-BACK SENT</span><span class="sys-ticker__sep">→</span>
+            <span>FOLLOW-UP QUEUED</span><span class="sys-ticker__sep">→</span>
+            <span>CRM UPDATED</span><span class="sys-ticker__sep">→</span>
+            <span>REVIEW REQUESTED</span><span class="sys-ticker__sep">→</span>
+            <span>SOURCE ATTRIBUTED</span><span class="sys-ticker__sep">→</span>
+            <span>DASHBOARD UPDATED</span><span class="sys-ticker__sep">→</span>
+            <!-- Duplicate for seamless loop -->
+            <span>LEAD CAPTURED</span><span class="sys-ticker__sep">→</span>
+            <span>INSTANT TEXT-BACK SENT</span><span class="sys-ticker__sep">→</span>
+            <span>FOLLOW-UP QUEUED</span><span class="sys-ticker__sep">→</span>
+            <span>CRM UPDATED</span><span class="sys-ticker__sep">→</span>
+            <span>REVIEW REQUESTED</span><span class="sys-ticker__sep">→</span>
+            <span>SOURCE ATTRIBUTED</span><span class="sys-ticker__sep">→</span>
+            <span>DASHBOARD UPDATED</span><span class="sys-ticker__sep">→</span>
+        </div>
+    </div>
+
+    <style>
+        /* Terminal path eyebrow */
+        .sys-path {
+            font-family: var(--font-mono, monospace);
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            color: var(--theme-accent-teal);
+            opacity: 0.8;
+        }
+
+
+
+
+        /* Scrolling ticker strip */
+        .sys-ticker {
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.35);
+            border-top: 1px solid rgba(79, 209, 197, 0.15);
+            border-bottom: 1px solid rgba(79, 209, 197, 0.15);
+            padding: 11px 0;
+        }
+        .sys-ticker__track {
+            display: flex;
+            gap: 20px;
+            white-space: nowrap;
+            animation: tickerScroll 28s linear infinite;
+            font-family: var(--font-mono, monospace);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.45);
+        }
+        .sys-ticker__sep {
+            color: var(--theme-accent-teal);
+            opacity: 0.6;
+        }
+        @keyframes tickerScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Pipeline node styles */
+        .sys-pipe-node {
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 3px; padding: 8px 10px;
+            opacity: 0; animation: nodeFadeIn 0.4s ease forwards;
+        }
+        .sys-pipe-node--entry { border-color: rgba(255,0,60,0.35); background: rgba(255,0,60,0.06); }
+        .sys-pipe-node--terminal { border-color: rgba(79,209,197,0.35); background: rgba(79,209,197,0.06); }
+        .sys-pipe-node--sm { padding: 6px 8px; }
+        .sys-pipe-icon { font-size: 0.8rem; flex-shrink: 0; line-height: 1; }
+        .sys-pipe-content { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+        .sys-pipe-label { font-family: var(--font-mono, monospace); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .sys-pipe-tag { font-family: var(--font-mono, monospace); font-size: 0.44rem; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+        .sys-pipe-status { font-family: var(--font-mono, monospace); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; flex-shrink: 0; }
+        .sys-pipe-arrow { position: relative; height: 10px; display: flex; align-items: center; padding: 0 12px; }
+        .sys-pipe-arrow__line { position: absolute; left: 12px; right: 12px; top: 50%; transform: translateY(-50%); height: 1px; background: linear-gradient(90deg, rgba(79,209,197,0.15) 0%, rgba(79,209,197,0.4) 50%, rgba(79,209,197,0.15) 100%); }
+        .sys-pipe-arrow__line::after { content: '▶'; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); font-size: 0.5rem; color: rgba(79,209,197,0.5); line-height: 1; }
+        .sys-pipe-arrow__packet { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 6px; height: 3px; background: var(--theme-accent-teal, #4fd1c5); border-radius: 1px; box-shadow: 0 0 6px var(--theme-accent-teal, #4fd1c5); animation: packetFlow 2.5s linear infinite; }
+        @keyframes packetFlow { 0% { left: 12px; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { left: calc(100% - 18px); opacity: 0; } }
+        @keyframes nodeFadeIn { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: translateX(0); } }
+        #pipeNode1 { animation-delay: 0.1s; } #pipeNode2 { animation-delay: 0.4s; } #pipeNode3 { animation-delay: 0.8s; }
+        #pipeNode4 { animation-delay: 1.2s; } #pipeNode5 { animation-delay: 1.4s; } #pipeNode6 { animation-delay: 1.6s; } #pipeNode7 { animation-delay: 2.0s; }
+
+        /* ── Blinking block cursor ── */
+        .sys-block-cursor {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.85);
+            animation: cursorBlink 1.1s step-end infinite;
+            font-weight: 400;
+            font-size: 0.3em;
+            margin-left: 2px;
+            vertical-align: sub;
+        }
+        @keyframes cursorBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ── Module Card Enhancements ── */
+        .sys-mod-card {
+            position: relative;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .sys-mod-card:hover {
+            border-color: color-mix(in srgb, var(--mod-color, var(--theme-accent-teal)) 50%, transparent);
+            box-shadow: 0 0 18px color-mix(in srgb, var(--mod-color, var(--theme-accent-teal)) 15%, transparent),
+                        inset 0 0 12px color-mix(in srgb, var(--mod-color, var(--theme-accent-teal)) 6%, transparent);
+        }
+        .sys-mod-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: var(--space-2);
+            margin-bottom: var(--space-2);
+        }
+        .sys-mod-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 3px;
+            flex-shrink: 0;
+        }
+        .sys-mod-id {
+            font-family: var(--font-mono, monospace);
+            font-size: 0.48rem;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.25);
+            text-transform: uppercase;
+        }
+        .sys-status-badge {
+            font-family: var(--font-mono, monospace);
+            font-size: 0.48rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #00e676;
+            background: rgba(0, 230, 118, 0.1);
+            border: 1px solid rgba(0, 230, 118, 0.25);
+            border-radius: 2px;
+            padding: 1px 5px;
+        }
+        .sys-mod-bar {
+            height: 2px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 1px;
+            overflow: hidden;
+            margin-top: auto;
+        }
+        .sys-mod-bar__fill {
+            height: 100%;
+            border-radius: 1px;
+            opacity: 0.5;
+        }
+
+        .sys-stat-card {
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .sys-stat-card:hover {
+            border-color: color-mix(in srgb, var(--stat-color, var(--theme-accent-teal)) 50%, transparent);
+            box-shadow: 0 0 20px color-mix(in srgb, var(--stat-color, var(--theme-accent-teal)) 15%, transparent),
+                        inset 0 0 14px color-mix(in srgb, var(--stat-color, var(--theme-accent-teal)) 6%, transparent);
+        }
+        .sys-stagger {
+            opacity: 0;
+            transform: translateY(16px);
+            transition:
+                opacity 0.5s ease calc(var(--stagger, 0) * 120ms),
+                transform 0.5s ease calc(var(--stagger, 0) * 120ms);
+        }
+        .sys-stagger.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .sys-scan-line {
+            position: absolute;
+            top: 0;
+            left: -60%;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--scan-color, white), transparent);
+            opacity: 0.45;
+            animation: scanSlide 4s ease-in-out infinite;
+        }
+        @keyframes scanSlide {
+            0%   { left: -60%; }
+            100% { left: 140%; }
+        }
+        .sys-before-after-bar {
+            display: flex;
+            gap: 3px;
+            margin: var(--space-2) 0;
+            height: 4px;
+        }
+        .sys-ba-before {
+            height: 100%;
+            background: rgba(255,255,255,0.15);
+            border-radius: 1px;
+        }
+        .sys-ba-after {
+            height: 100%;
+            border-radius: 1px;
+            opacity: 0.7;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lead counter
+            const counter = document.getElementById('sysLeadCounter');
+            if (counter) {
+                let val = 0;
+                const target = 14872;
+                const step = () => {
+                    val += Math.floor(Math.random() * 800 + 200);
+                    if (val >= target) { val = target; counter.textContent = val.toLocaleString(); return; }
+                    counter.textContent = val.toLocaleString();
+                    requestAnimationFrame(step);
+                };
+                step();
+            }
+
+            // Uptime counter
+            const uptimeEl = document.getElementById('sysUptime');
+            if (uptimeEl) {
+                const start = Date.now();
+                setInterval(() => {
+                    const s = Math.floor((Date.now() - start) / 1000);
+                    const h = String(Math.floor(s / 3600)).padStart(2, '0');
+                    const m = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
+                    const sec = String(s % 60).padStart(2, '0');
+                    uptimeEl.textContent = `${h}h ${m}m ${sec}s`;
+                }, 1000);
+            }
+        });
+
+        // Stagger reveal + counter animations
+        const staggerEls = document.querySelectorAll('.sys-stagger');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+
+                const pair = entry.target.querySelector('.sys-count-pair');
+                if (pair) {
+                    const before = +pair.dataset.before;
+                    const after  = +pair.dataset.after;
+                    const suffix = pair.dataset.suffix || '';
+                    const bEl = pair.querySelector('.sys-count-before');
+                    const aEl = pair.querySelector('.sys-count-after');
+                    let t = 0; const dur = 900;
+                    const tick = () => {
+                        t = Math.min(t + 16, dur);
+                        const p = t / dur;
+                        bEl.textContent = Math.round(before + (before * 0.4) * (1 - p)) + suffix;
+                        aEl.textContent = Math.round(after  + (after  * 0.6) * (1 - p)) + suffix;
+                        if (t < dur) requestAnimationFrame(tick);
+                        else { bEl.textContent = before + suffix; aEl.textContent = after + suffix; }
+                    };
+                    setTimeout(() => requestAnimationFrame(tick), 200);
+                }
+            });
+        }, { threshold: 0.2 });
+        staggerEls.forEach(el => obs.observe(el));
+    </script>
+
+    <!-- SECTION 2 — SYSTEM COMPONENTS -->
+    <section class="section section--padded surface-sunken">
+        <div class="grid-page grid-gap-lg">
+            <div class="col-full text-center stack-4">
+                <p class="t-eyebrow"><span class="sys-path">> /sys/components</span></p>
+                <h2 class="t-display t-display--section" style="margin-inline: auto;">
+                    WHAT EACH <span class="t-accent t-flicker">PIECE DOES.</span>
+                </h2>
+                <p class="t-body t-body--md" style="margin-inline: auto; max-width: 55ch;">
+                    Every component has a specific job. Every job runs automatically.
+                </p>
+            </div>
+            <div class="col-full">
+                <div class="inner-grid-3">
+
+                    <div class="card sys-mod-card stack-3" style="--mod-color: var(--color-brand);">
+                        <div class="sys-mod-header">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--color-brand); font-size: 1.2rem;">◉</span>
+                                <h3 class="t-display t-display--card" style="margin: 0;">SERVICE PAGES</h3>
+                            </div>
+                            <div class="sys-mod-meta">
+                                <span class="sys-mod-id">[MOD_01]</span>
+                                <span class="sys-status-badge">ACTIVE</span>
+                            </div>
+                        </div>
+                        <p class="t-body t-body--sm">Dedicated pages for each service, built around what people actually search. Every page has one job: turn the visitor into a lead.</p>
+                        <div class="sys-mod-bar"><div class="sys-mod-bar__fill" style="width: 78%; background: var(--color-brand);"></div></div>
+                    </div>
+
+                    <div class="card sys-mod-card stack-3" style="--mod-color: var(--theme-accent-yellow);">
+                        <div class="sys-mod-header">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--theme-accent-yellow); font-size: 1.2rem;">◉</span>
+                                <h3 class="t-display t-display--card" style="margin: 0;">LOCAL PAGES</h3>
+                            </div>
+                            <div class="sys-mod-meta">
+                                <span class="sys-mod-id">[MOD_02]</span>
+                                <span class="sys-status-badge">ACTIVE</span>
+                            </div>
+                        </div>
+                        <p class="t-body t-body--sm">City and town pages that rank your business in every market you serve — not just one. Built to show up when someone searches in a specific neighborhood or zip code.</p>
+                        <div class="sys-mod-bar"><div class="sys-mod-bar__fill" style="width: 62%; background: var(--theme-accent-yellow);"></div></div>
+                    </div>
+
+                    <div class="card sys-mod-card stack-3" style="--mod-color: var(--theme-accent-teal);">
+                        <div class="sys-mod-header">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--theme-accent-teal); font-size: 1.2rem;">◉</span>
+                                <h3 class="t-display t-display--card" style="margin: 0;">LEAD CAPTURE</h3>
+                            </div>
+                            <div class="sys-mod-meta">
+                                <span class="sys-mod-id">[MOD_03]</span>
+                                <span class="sys-status-badge">ACTIVE</span>
+                            </div>
+                        </div>
+                        <p class="t-body t-body--sm">Missed call? Instant text-back. Form submission? Instant notification and CRM log. Every lead caught, timestamped, tracked.</p>
+                        <div class="sys-mod-bar"><div class="sys-mod-bar__fill" style="width: 91%; background: var(--theme-accent-teal);"></div></div>
+                    </div>
+
+                    <div class="card sys-mod-card stack-3" style="--mod-color: var(--theme-accent-yellow);">
+                        <div class="sys-mod-header">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--theme-accent-yellow); font-size: 1.2rem;">◉</span>
+                                <h3 class="t-display t-display--card" style="margin: 0;">MISSED CALL TEXT</h3>
+                            </div>
+                            <div class="sys-mod-meta">
+                                <span class="sys-mod-id">[MOD_04]</span>
+                                <span class="sys-status-badge">ACTIVE</span>
+                            </div>
+                        </div>
+                        <p class="t-body t-body--sm">Miss a call while you're on a job? An automated text goes back in seconds. While your competitor's voicemail picks up, you've already responded.</p>
+                        <div class="sys-mod-bar"><div class="sys-mod-bar__fill" style="width: 100%; background: var(--theme-accent-yellow);"></div></div>
+                    </div>
+
+                    <div class="card sys-mod-card stack-3" style="--mod-color: var(--theme-accent-teal);">
+                        <div class="sys-mod-header">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--theme-accent-teal); font-size: 1.2rem;">◉</span>
+                                <h3 class="t-display t-display--card" style="margin: 0;">LEAD NURTURING</h3>
+                            </div>
+                            <div class="sys-mod-meta">
+                                <span class="sys-mod-id">[MOD_05]</span>
+                                <span class="sys-status-badge">ACTIVE</span>
+                            </div>
+                        </div>
+                        <p class="t-body t-body--sm">Email and text sequences that chase leads for you. New, warm, cold — the system knows the difference and handles each one.</p>
+                        <div class="sys-mod-bar"><div class="sys-mod-bar__fill" style="width: 84%; background: var(--theme-accent-teal);"></div></div>
+                    </div>
+
+                    <div class="card sys-mod-card stack-3" style="--mod-color: var(--color-brand);">
+                        <div class="sys-mod-header">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--color-brand); font-size: 1.2rem;">◉</span>
+                                <h3 class="t-display t-display--card" style="margin: 0;">REVIEW AUTOMATION</h3>
+                            </div>
+                            <div class="sys-mod-meta">
+                                <span class="sys-mod-id">[MOD_06]</span>
+                                <span class="sys-status-badge">ACTIVE</span>
+                            </div>
+                        </div>
+                        <p class="t-body t-body--sm">Automated review requests after every job. Reminders for non-responders. Negative feedback gets caught before it goes public.</p>
+                        <div class="sys-mod-bar"><div class="sys-mod-bar__fill" style="width: 55%; background: var(--color-brand);"></div></div>
+                    </div>
+
+                    <div class="card sys-mod-card stack-3" style="--mod-color: var(--theme-accent-teal);">
+                        <div class="sys-mod-header">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--theme-accent-teal); font-size: 1.2rem;">◉</span>
+                                <h3 class="t-display t-display--card" style="margin: 0;">TRACKING & ATTRIBUTION</h3>
+                            </div>
+                            <div class="sys-mod-meta">
+                                <span class="sys-mod-id">[MOD_07]</span>
+                                <span class="sys-status-badge">ACTIVE</span>
+                            </div>
+                        </div>
+                        <p class="t-body t-body--sm">Every call and form tracked to its source. You'll know exactly which marketing produced which jobs and what it cost.</p>
+                        <div class="sys-mod-bar"><div class="sys-mod-bar__fill" style="width: 70%; background: var(--theme-accent-teal);"></div></div>
+                    </div>
+
+                    <div class="card sys-mod-card stack-3" style="--mod-color: var(--color-brand);">
+                        <div class="sys-mod-header">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--color-brand); font-size: 1.2rem;">◉</span>
+                                <h3 class="t-display t-display--card" style="margin: 0;">AI SITE ASSISTANT</h3>
+                            </div>
+                            <div class="sys-mod-meta">
+                                <span class="sys-mod-id">[MOD_08]</span>
+                                <span class="sys-status-badge">ACTIVE</span>
+                            </div>
+                        </div>
+                        <p class="t-body t-body--sm">Answers questions, captures leads, routes inquiries. Works 24/7. No breaks, no sick days.</p>
+                        <div class="sys-mod-bar"><div class="sys-mod-bar__fill" style="width: 100%; background: var(--color-brand);"></div></div>
+                    </div>
+
+                    <div class="card sys-mod-card stack-3">
+                        <div class="sys-mod-header">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="color: var(--theme-accent-yellow); font-size: 1.2rem;">◉</span>
+                                <h3 class="t-display t-display--card" style="margin: 0;">DASHBOARD</h3>
+                            </div>
+                            <div class="sys-mod-meta">
+                                <span class="sys-mod-id">[MOD_09]</span>
+                                <span class="sys-status-badge">ACTIVE</span>
+                            </div>
+                        </div>
+                        <p class="t-body t-body--sm">One screen. Leads, calls, sources, reviews, response times. The numbers that matter, nothing that doesn't.</p>
+                        <div class="sys-mod-bar"><div class="sys-mod-bar__fill" style="width: 88%; background: var(--theme-accent-yellow);"></div></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 — HOW IT CONNECTS -->
+    <section class="section section--statement section--padded surface-base">
+        <div class="grid-page">
+            <div class="col-content stack-6 text-center">
+                <h2 class="t-display t-display--section" style="margin-inline: auto;">
+                    IT'S NOT A STACK OF TOOLS.<br />
+                    <span class="t-crt-shake" style="color: var(--theme-accent-teal);">IT'S ONE MACHINE<span class="sys-block-cursor">█</span></span>
+                </h2>
+                <p class="t-body t-body--lg" style="margin-inline: auto; max-width: 60ch;">
+                    Catch it. Respond. Follow up. Track it. Get the review. See the numbers. Every lead, same path. When it's running, nothing falls through.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — WHAT THE NUMBERS SAY -->
+    <section class="section section--padded surface-elevated">
+        <div class="grid-page grid-gap-lg">
+            <div class="col-full text-center stack-4">
+                <p class="t-eyebrow"><span class="sys-path">> /sys/logs/results</span></p>
+                <h2 class="t-display t-display--section" style="margin-inline: auto;">
+                    WHAT <span class="t-accent t-flicker">THE NUMBERS</span> SAY.
+                </h2>
+                <p class="t-body t-body--lg" style="margin-inline: auto; max-width: 55ch;">
+                    Same businesses. Same ad spend. Different outcome — because the system actually worked.
+                </p>
+            </div>
+            <div class="col-full">
+                <div class="inner-grid-2" style="gap: var(--space-6);">
+
+                    <div class="card sys-stat-card sys-stagger" style="--stagger: 0; --stat-color: var(--color-brand); border-top: 3px solid var(--color-brand); padding: var(--space-6); position: relative; overflow: hidden;">
+                        <div class="sys-scan-line" style="--scan-color: var(--color-brand);"></div>
+                        <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-brand);">HVAC Company</p>
+                        <p class="t-display t-display--card sys-count-pair" style="color: var(--color-text-primary); font-size: 2rem; margin: var(--space-2) 0;"
+                            data-before="30" data-after="4" data-suffix="%"
+                        ><span class="sys-count-before">30%</span> <span style="color: var(--color-brand);">→</span> <span class="sys-count-after">4%</span></p>
+                        <p class="t-body t-body--sm" style="color: var(--color-text-primary); font-weight: 600;">Missed call rate — dropped in 60 days.</p>
+                        <div class="sys-before-after-bar">
+                            <div class="sys-ba-before" style="width: 30%;"></div>
+                            <div class="sys-ba-after" style="width: 4%; background: var(--color-brand);"></div>
+                        </div>
+                        <p class="t-body t-body--sm">Missed call text-back + CRM automation. Every after-hours lead was getting an instant response while competitors went to voicemail.</p>
+                    </div>
+
+                    <div class="card sys-stat-card sys-stagger" style="--stagger: 1; --stat-color: var(--theme-accent-teal); border-top: 3px solid var(--theme-accent-teal); padding: var(--space-6); position: relative; overflow: hidden;">
+                        <div class="sys-scan-line" style="--scan-color: var(--theme-accent-teal);"></div>
+                        <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--theme-accent-teal);">Plumber — Solo Shop</p>
+                        <p class="t-display t-display--card" style="color: var(--color-text-primary); font-size: 2rem; margin: var(--space-2) 0;">18hrs <span style="color: var(--theme-accent-teal);">→</span> Instant</p>
+                        <p class="t-body t-body--sm" style="color: var(--color-text-primary); font-weight: 600;">Average lead response time — no extra staff.</p>
+                        <div class="sys-before-after-bar">
+                            <div class="sys-ba-before" style="width: 90%;"></div>
+                            <div class="sys-ba-after" style="width: 2%; background: var(--theme-accent-teal);"></div>
+                        </div>
+                        <p class="t-body t-body--sm">One guy doing everything. Automated follow-up handles the first response while he's on the job. He used to lose leads to voicemail. Now they're in the CRM before he puts down his wrench.</p>
+                    </div>
+
+                    <div class="card sys-stat-card sys-stagger" style="--stagger: 2; --stat-color: var(--theme-accent-yellow); border-top: 3px solid var(--theme-accent-yellow); padding: var(--space-6); position: relative; overflow: hidden;">
+                        <div class="sys-scan-line" style="--scan-color: var(--theme-accent-yellow);"></div>
+                        <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--theme-accent-yellow);">Electrician — 3 Trucks</p>
+                        <p class="t-display t-display--card sys-count-single" style="color: var(--color-text-primary); font-size: 2rem; margin: var(--space-2) 0;"
+                            data-target="18000" data-prefix="$" data-suffix="K"
+                        ><span style="color: var(--theme-accent-yellow);">$18K</span></p>
+                        <p class="t-body t-body--sm" style="color: var(--color-text-primary); font-weight: 600;">Recovered from abandoned estimates — in 90 days.</p>
+                        <div class="sys-before-after-bar">
+                            <div class="sys-ba-before" style="width: 45%;"></div>
+                            <div class="sys-ba-after" style="width: 80%; background: var(--theme-accent-yellow);"></div>
+                        </div>
+                        <p class="t-body t-body--sm">Automated estimate follow-up sequences pinged every open quote at day 2, 5, and 10. Jobs they thought were dead started booking. No extra effort, no extra headcount.</p>
+                    </div>
+
+                    <div class="card sys-stat-card sys-stagger" style="--stagger: 3; --stat-color: var(--color-brand); border-top: 3px solid var(--color-brand); padding: var(--space-6); position: relative; overflow: hidden;">
+                        <div class="sys-scan-line" style="--scan-color: var(--color-brand);"></div>
+                        <p style="font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-brand);">Roofer — 4 Sales Reps</p>
+                        <p class="t-display t-display--card sys-count-pair" style="color: var(--color-text-primary); font-size: 2rem; margin: var(--space-2) 0;"
+                            data-before="12" data-after="23" data-suffix="%"
+                        ><span class="sys-count-before">12%</span> <span style="color: var(--color-brand);">→</span> <span class="sys-count-after">23%</span></p>
+                        <p class="t-body t-body--sm" style="color: var(--color-text-primary); font-weight: 600;">Close rate — same ad spend, zero new campaigns.</p>
+                        <div class="sys-before-after-bar">
+                            <div class="sys-ba-before" style="width: 12%;"></div>
+                            <div class="sys-ba-after" style="width: 23%; background: var(--color-brand);"></div>
+                        </div>
+                        <p class="t-body t-body--sm">Attribution tracking revealed where the best leads were already coming from. Ad budget was reallocated. Pipeline tightened. Same traffic, better conversion — because the system was tracking what actually worked.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--cta section--padded section--mic-drop section--mic-drop--teal has-scanlines" style="position: relative;">
+        <div class="grid-page" style="position: relative; z-index: 2;">
+            <div class="col-content text-center stack-4">
+                <h2 class="t-display t-display--section" style="color: #fff; margin-inline: auto;">
+                    READY TO INSTALL<br />
+                    <span class="mic-drop__headline">YOUR SYSTEM?</span>
+                </h2>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-4);">
+                    <a href="/contact" class="btn btn--lg">Install Your System →</a>
+                    <a href="/foundation-install" class="btn btn--lg btn--mic-outline">See The Foundation Install</a>
+                </div>
+                <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #ffffff; text-transform: uppercase; letter-spacing: 0.1em; margin-top: var(--space-3);">
+                    Takes 5 minutes. We review it in 48 hours. No pitch on the first call.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</BaseLayout>

@@ -1,0 +1,92 @@
+---
+interface Props {
+    currentPage?: string;
+}
+const { currentPage = '' } = Astro.props;
+
+const pages = [
+    { href: '/see-the-system',       label: 'The System',        slug: 'see-the-system' },
+    { href: '/foundation-install',   label: 'Foundation',        slug: 'foundation-install' },
+    { href: '/visibility',           label: 'Visibility',        slug: 'visibility' },
+    { href: '/volume',               label: 'Volume',            slug: 'volume' },
+    { href: '/custom-builds',        label: 'Custom Builds',     slug: 'custom-builds' },
+    { href: '/activation',           label: 'Activation',        slug: 'activation' },
+    { href: '/about',                label: 'About',             slug: 'about' },
+];
+---
+
+<nav class="nav" id="global-nav">
+    <div class="nav__inner">
+        <!-- Logo -->
+        <a href="/" class="nav__logo">
+            <img
+                src="/images/logos/badmouth-logo.webp"
+                alt="Badmouth Digital"
+                width="200"
+                height="40"
+                loading="eager"
+            />
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="nav__links">
+            {pages.map((p) => (
+                <a
+                    href={p.href}
+                    class:list={['nav__link', { 'nav__link--active': currentPage === p.slug }]}
+                >
+                    {p.label}
+                </a>
+            ))}
+            <a href="/contact" class="btn btn--primary btn--sm">
+                Install Your System
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="nav__mobile-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile-menu" id="mobile-menu">
+        {pages.map((p) => (
+            <a href={p.href}>{p.label}</a>
+        ))}
+        <a href="/contact" class="btn btn--primary" style="margin-top: var(--space-4); text-align: center;">
+            Install Your System
+        </a>
+    </div>
+</nav>
+
+<script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    if (btn && menu && menuIcon && closeIcon) {
+        btn.addEventListener('click', () => {
+            const isOpen = menu.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', String(isOpen));
+            menuIcon.classList.toggle('hidden', isOpen);
+            closeIcon.classList.toggle('hidden', !isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // Close when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('is-open');
+                btn.setAttribute('aria-expanded', 'false');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+</script>

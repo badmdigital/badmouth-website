@@ -1,0 +1,291 @@
+---
+/**
+ * SystemWarning.astro
+ * 
+ * "ARE YOU READY FOR THE TRUTH?" landing popup
+ * Inspired by retro system dialog boxes — red border,
+ * light background, exclamation icon, two big buttons.
+ * 
+ * Uses sessionStorage so it only shows once per session.
+ */
+---
+
+<div class="system-warning-overlay" id="systemWarning">
+    <div class="system-warning">
+        <!-- Title bar -->
+        <div class="system-warning__titlebar">
+            <span class="system-warning__titlebar-icon">⚠</span>
+            <span class="system-warning__titlebar-text">SYSTEM WARNING</span>
+            <span class="system-warning__titlebar-dots">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--white"></span>
+            </span>
+        </div>
+
+        <!-- Content -->
+        <div class="system-warning__body">
+            <div class="system-warning__icon">!</div>
+            <h2 class="system-warning__heading">
+                ARE YOU READY FOR THE <span class="system-warning__truth">TRUTH?</span>
+            </h2>
+            <p class="system-warning__text">
+                This site contains raw, unfiltered marketing advice. No fluff. No BS. Just results.
+            </p>
+            <p class="system-warning__subtext">PROCEED AT YOUR OWN RISK.</p>
+
+            <div class="system-warning__buttons">
+                <button class="system-warning__btn system-warning__btn--ready" id="warningReady">
+                    I'M READY
+                </button>
+                <button class="system-warning__btn system-warning__btn--leave" id="warningLeave">
+                    GET ME OUT
+                </button>
+            </div>
+        </div>
+
+        <!-- Bottom accent line -->
+        <div class="system-warning__accent"></div>
+    </div>
+</div>
+
+<style>
+    .system-warning-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        opacity: 0;
+        animation: fadeInOverlay 0.3s ease forwards;
+    }
+
+    .system-warning-overlay.dismissed {
+        animation: fadeOutOverlay 0.4s ease forwards;
+        pointer-events: none;
+    }
+
+    .system-warning {
+        width: min(520px, 90vw);
+        background: #f0f0f0;
+        border: 3px solid #ff0033;
+        box-shadow:
+            0 0 0 1px rgba(0, 0, 0, 0.3),
+            8px 8px 0 rgba(0, 0, 0, 0.4),
+            0 0 60px rgba(255, 0, 51, 0.15);
+        position: relative;
+        animation: slideInWarning 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    /* Title bar */
+    .system-warning__titlebar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        background: #0a0a0a;
+        border-bottom: 2px solid #ff0033;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #f0f0f0;
+    }
+
+    .system-warning__titlebar-icon {
+        color: #ff0033;
+        font-size: 0.85rem;
+    }
+
+    .system-warning__titlebar-dots {
+        margin-left: auto;
+        display: flex;
+        gap: 6px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+
+    .dot--red { background: #ff0033; }
+    .dot--white { background: #f0f0f0; }
+
+    /* Body */
+    .system-warning__body {
+        padding: 48px 40px 40px;
+        text-align: center;
+    }
+
+    .system-warning__icon {
+        width: 56px;
+        height: 56px;
+        background: #ff0033;
+        color: #fff;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 28px;
+        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .system-warning__heading {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: #0a0a0a;
+        line-height: 1.1;
+        margin-bottom: 16px;
+    }
+
+    .system-warning__truth {
+        color: #ff0033;
+    }
+
+    .system-warning__text {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.85rem;
+        color: #333;
+        line-height: 1.7;
+        max-width: 36ch;
+        margin: 0 auto 12px;
+    }
+
+    .system-warning__subtext {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #0a0a0a;
+        margin-bottom: 32px;
+    }
+
+    /* Buttons */
+    .system-warning__buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .system-warning__btn {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.08em;
+        padding: 14px 40px;
+        border: 2px solid #0a0a0a;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .system-warning__btn--ready {
+        background: #0a0a0a;
+        color: #f0f0f0;
+        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .system-warning__btn--ready:hover {
+        background: #ff0033;
+        border-color: #ff0033;
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+        transform: translate(-1px, -1px);
+    }
+
+    .system-warning__btn--leave {
+        background: #f0f0f0;
+        color: #0a0a0a;
+        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    .system-warning__btn--leave:hover {
+        background: #ddd;
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+        transform: translate(-1px, -1px);
+    }
+
+    /* Bottom accent */
+    .system-warning__accent {
+        height: 4px;
+        background: #ff0033;
+    }
+
+    /* Animations */
+    @keyframes fadeInOverlay {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeOutOverlay {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+
+    @keyframes slideInWarning {
+        from {
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* Scanline overlay on the modal */
+    .system-warning::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px
+        );
+        pointer-events: none;
+        z-index: 1;
+    }
+</style>
+
+<script>
+    const overlay = document.getElementById('systemWarning');
+    const readyBtn = document.getElementById('warningReady');
+    const leaveBtn = document.getElementById('warningLeave');
+
+    // Check if already dismissed this session
+    if (sessionStorage.getItem('badmouth-warned') === 'true') {
+        overlay?.remove();
+    }
+
+    function dismiss() {
+        overlay?.classList.add('dismissed');
+        sessionStorage.setItem('badmouth-warned', 'true');
+        document.body.style.overflow = '';
+        setTimeout(() => overlay?.remove(), 500);
+    }
+
+    readyBtn?.addEventListener('click', dismiss);
+
+    leaveBtn?.addEventListener('click', () => {
+        window.location.href = 'https://www.google.com';
+    });
+
+    // Lock body scroll when popup is showing
+    if (overlay && !sessionStorage.getItem('badmouth-warned')) {
+        document.body.style.overflow = 'hidden';
+    }
+</script>

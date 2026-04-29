@@ -1,0 +1,87 @@
+/* ═══════════════════════════════════════════════════════
+   BADMOUTH DIGITAL — Theme File
+   
+   This file defines ALL brand-specific values.
+   Every other CSS file in system/ references semantic
+   tokens that resolve to these --theme-* variables.
+   
+   To start a new project: duplicate this file,
+   rename it, and change the values below.
+   
+   NOTE: Google Fonts @import goes in global.css
+   (must precede all other rules per CSS spec)
+   Current project font URL:
+   https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    /* ── Brand Colors ──────────────────────────────── */
+    --theme-brand: #ff0033;
+    --theme-brand-dark: #cc0029;
+    --theme-brand-glow: rgba(255, 0, 51, 0.15);
+
+    /* ── Accent Colors ─────────────────────────────── */
+    --theme-accent-teal: #4FD1C5;
+    --theme-accent-teal-glow: rgba(79, 209, 197, 0.15);
+    --theme-accent-yellow: #FACC15;
+    --theme-accent-yellow-glow: rgba(250, 204, 21, 0.15);
+
+    /* ── Surfaces (backgrounds) ────────────────────── */
+    --theme-surface-base: #0a0a0a;
+    /* deepest background */
+    --theme-surface-elevated: #171717;
+    /* cards, nav, raised panels */
+    --theme-surface-sunken: #111111;
+    /* alternating section contrast */
+    --theme-surface-pure: #000000;
+    /* absolute black (footer) */
+    --theme-surface-inverse: #ffffff;
+    /* light surface when needed */
+
+    /* ── Text ──────────────────────────────────────── */
+    --theme-text-primary: #ffffff;
+    --theme-text-secondary: #a3a3a3;
+    --theme-text-muted: #737373;
+    --theme-text-inverse: #0a0a0a;
+
+    /* ── Borders ───────────────────────────────────── */
+    --theme-border: #262626;
+    --theme-border-subtle: #404040;
+    --theme-border-strong: #ffffff;
+
+    /* ── Typography ────────────────────────────────── */
+    --theme-font-display: 'Bebas Neue', 'Impact', sans-serif;
+    --theme-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --theme-font-mono: 'Roboto Mono', 'Fira Code', monospace;
+
+    /* ── Shadows ───────────────────────────────────── */
+    --theme-shadow-card: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --theme-shadow-brand: 0 8px 24px rgba(255, 0, 51, 0.15);
+    --theme-shadow-nav: 0 1px 0 rgba(255, 0, 51, 0.15);
+
+    /* ── Radius ────────────────────────────────────── */
+    --theme-radius: 0px;
+    /* sharp/brutalist by default */
+    --theme-radius-sm: 2px;
+    --theme-radius-md: 4px;
+    --theme-radius-lg: 8px;
+    --theme-radius-full: 9999px;
+
+    /* ── Nav ───────────────────────────────────────── */
+    --theme-nav-bg: rgba(10, 10, 10, 0.92);
+    --theme-nav-blur: 12px;
+    --theme-nav-border: rgba(255, 0, 51, 0.15);
+
+    /* ── CRT Effects (optional — set to 0 to disable) */
+    --theme-noise-opacity: 0.03;
+    --theme-scanline-opacity: 0.03;
+
+    /* ── Selection ─────────────────────────────────── */
+    --theme-selection-bg: #ff0033;
+    --theme-selection-text: #ffffff;
+
+    /* ── Scrollbar ─────────────────────────────────── */
+    --theme-scrollbar-track: #0a0a0a;
+    --theme-scrollbar-thumb: #404040;
+    --theme-scrollbar-hover: #ff0033;
+}
